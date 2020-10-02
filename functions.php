@@ -13,17 +13,17 @@
 // }
 
 /*** include carbon fields */
-add_action( 'after_setup_theme', 'crb_load' );
-function crb_load() {
-	load_template( get_template_directory() . '/inc/carbon-fields/vendor/autoload.php' );
-	\Carbon_Fields\Carbon_Fields::boot();
-}
+// add_action( 'after_setup_theme', 'crb_load' );
+// function crb_load() {
+// 	load_template( get_template_directory() . '/inc/carbon-fields/vendor/autoload.php' );
+// 	\Carbon_Fields\Carbon_Fields::boot();
+// }
 
-add_action( 'carbon_fields_register_fields', 'estore_register_custom_fields' );
-function estore_register_custom_fields() {
-	require get_template_directory() . '/inc/custom-fields-options/metabox.php';
-	require get_template_directory() . '/inc/custom-fields-options/theme-options.php';
-}
+// add_action( 'carbon_fields_register_fields', 'estore_register_custom_fields' );
+// function estore_register_custom_fields() {
+// 	require get_template_directory() . '/inc/custom-fields-options/metabox.php';
+// 	require get_template_directory() . '/inc/custom-fields-options/theme-options.php';
+// }
 
 
 /******* include custom properties ******/
@@ -77,9 +77,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
-
-	
-
 	require get_template_directory() . '/woocommerce/wc-functions.php';
 	require get_template_directory() . '/woocommerce/wc-functions-remove.php';
 }

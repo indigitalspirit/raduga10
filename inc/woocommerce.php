@@ -13,7 +13,7 @@
  *
  * @return void
  */
-function raduga10_woocommerce_scripts() {
+/* function raduga10_woocommerce_scripts() {
 	wp_enqueue_style( 'raduga10-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), _S_VERSION );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
@@ -30,7 +30,7 @@ function raduga10_woocommerce_scripts() {
 
 	wp_add_inline_style( 'raduga10-woocommerce-style', $inline_font );
 }
-add_action( 'wp_enqueue_scripts', 'raduga10_woocommerce_scripts' );
+add_action( 'wp_enqueue_scripts', 'raduga10_woocommerce_scripts' ); */
 
 
 

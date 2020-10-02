@@ -1,4 +1,3 @@
-
 <?php
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,6 +13,7 @@ if ( ! function_exists( 'raduga10_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
+	add_action( 'after_setup_theme', 'raduga10_setup' );
 	function raduga10_setup() {
 		/*
 		 * Make theme available for translation.
@@ -126,7 +126,7 @@ if ( ! function_exists( 'raduga10_setup' ) ) :
 
 	}
 endif;
-add_action( 'after_setup_theme', 'raduga10_setup' );
+
 
 
 
