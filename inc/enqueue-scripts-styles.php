@@ -10,6 +10,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Enqueue styles.
  */
 function raduga10_styles() {
+
+	wp_enqueue_style( 'raduga10-style-fonts', 'https://fonts.googleapis.com/css?family=Rubik:400%2C500%7COpen+Sans:400', array(), null, 'all' );
+
+
 	wp_enqueue_style( 'raduga10-style-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), null, 'all' );
 
 	wp_enqueue_style( 'raduga10-style-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), null, 'all' );

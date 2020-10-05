@@ -42,11 +42,43 @@ if ( ! function_exists( 'raduga10_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		// register_nav_menus(
-		// 	array(
-		// 		'menu-1' => esc_html__( 'Primary', 'raduga10' ),
-		// 	)
-		// );
+		register_nav_menus(
+			array(
+				'menu-main' => esc_html__( 'Primary', 'raduga10' ),
+				'menu-categories' => esc_html__( 'Categories', 'raduga10' ),
+			)
+		);
+
+
+		/** Change sub-menu class by overwriting wp menu  */
+		class Raduga_Walker_Nav_Menu extends Walker_Nav_Menu {
+			function start_lvl(&$output, $depth = 0, $args = array()) {
+				
+				$indent = str_repeat("\t", $depth);
+				$output .= "\n$indent<ul class=\"category-mega-menu\">\n";
+			}
+		}
+
+
+
+		//add class to parent menu items
+// 		add_filter('wp_nav_menu_objects', 'css_for_nav_parrent');
+// function css_for_nav_parrent( $items ){
+// 	foreach( $items as $item ){
+// 		if( __nav_hasSub( $item->ID, $items ) )
+// 			$item->classes[] = 'category-mega-menu'; // все элементы поля "classes" меню, будут совмещены и выведены в атрибут class HTML тега <li>
+// 	}
+
+// 	return $items;
+// }
+// function __nav_hasSub( $item_id, $items ){
+// 	foreach( $items as $item ){
+// 		if( $item->menu_item_parent && $item->menu_item_parent == $item_id )
+// 			return true;
+// 	}
+
+// 	return false;
+// }
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
