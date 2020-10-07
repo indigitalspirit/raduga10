@@ -45,7 +45,11 @@
 									<!-- <i class="icon ion-md-alarm"></i>  -->
 									<i class="fa fa-phone"></i> 
 									<span class="support-no">
-										<a href="tel:89814024614">+79814024614</a>
+									<?php 
+										$shop_phone = get_option( 'raduga10_phone_field');
+
+									?>
+										<a href="tel:<?php echo $shop_phone;?>"><?php echo $shop_phone;?></a>
 									</span>
 								</p>
 						</div>
@@ -54,8 +58,11 @@
 							<p>
 								<i class="icon ion-md-alarm"></i> 
 								<!-- <i class="fa fa-phone"></i>  -->
+								<?php 
+										$shop_shedule = get_option( 'raduga10_shedule_field');
+									?>
 								<span class="support-no">
-									Ежедневно: с 10:00 до 19:00
+								<?php echo $shop_shedule;?>
 								</span>
 							</p>
 						</div>
@@ -64,8 +71,12 @@
 							<p>
 								<!-- <i class="icon ion-md-alarm"></i>  -->
 								<i class="fa fa-map-marker" aria-hidden="true"></i>
+								<?php 
+										$shop_address = get_option( 'raduga10_address_field');
+									?>
+								
 								<span class="support-no">
-									<a href="/contacts">Адрес магазина: г. Сегежа, ул. Северная д. 3 ТЦ "Радуга"</a>
+									<a href="/contacts"><?php echo $shop_address;?></a>
 								</span>
 							</p>
 						</div>
@@ -74,11 +85,15 @@
 					<div class="col-12 col-lg-2">
 						<div class="header-top-text header-top-text__right text-center text-lg-right mb-0 mb-md-15 mb-sm-15">
 							<p>
+							<?php 
+										$shop_whatsapp = get_option( 'raduga10_whatsapp_field');
+										$shop_vk = get_option( 'raduga10_vk_field');
+									?>
 								<!-- <i class="icon ion-md-alarm"></i>  -->
-								<a href="https://api.whatsapp.com/send?phone=+78004441755" target="_blank">
+								<a href="<?php echo $shop_whatsapp;?>" target="_blank">
 									<i class="fa fa-whatsapp"></i>
 								</a>
-								<a href="https://vk.com/salon_mebeli_segeza" target="_blank">
+								<a href="<?php echo $shop_vk;?>" target="_blank">
 									<i class="fa fa-vk"></i> 
 								</a>
 								
@@ -273,22 +288,7 @@
 						<!-- navigation section -->
 						<div class="main-menu">
 							<nav>
-								<!-- <ul>
-									<li class="active menu-item-has-children"><a href="index.html">Главная</a>
-										
-									</li>
-									<li class="menu-item-has-children"><a href="shop-left-sidebar.html">Каталог</a>
-									
-									</li>
-									
-									<li class="menu-item-has-children"><a href="#">О нас</a>
-									
-									</li>
-									<li class="menu-item-has-children"><a href="#">Акции</a>
-									
-									</li>
-									<li><a href="contact.html">Контакты</a></li>
-								</ul> -->
+							
 								<?php
 								wp_nav_menu(
 									array(

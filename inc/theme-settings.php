@@ -180,3 +180,76 @@ add_action( 'after_setup_theme', 'raduga10_content_width', 0 );
 	
 // }
 // add_action( 'after_setup_theme', 'raduga10_woocommerce_setup' );
+
+
+
+
+
+/**
+ * Add custom fields (phone, address, email, social media) on admin-menu page
+ *
+ */
+function raduga10_add_phone_field_to_admin_page(){
+
+
+	//$option_name = 'raduga10_phone_field';
+
+	$options_names = array(
+		'raduga10_phone_field',
+		'raduga10_shedule_field',
+		'raduga10_address_field',
+		'raduga10_whatsapp_field',
+		'raduga10_vk_field',
+	);
+
+	for($i = 0; $i < count($options_names); $i++ ) {
+			// регистрируем опцию
+			register_setting( 'general', $options_names[$i] );
+			// добавляем поле
+
+			switch ($options_names[$i]) {
+				case 'raduga10_phone_field':
+						$this_option_name = "Телефон";
+						break;
+				case 'raduga10_shedule_field':
+						$this_option_name = "Режим работы";
+						break;
+				case 'raduga10_address_field':
+						$this_option_name = "Адрес";
+						break;
+				case 'raduga10_whatsapp_field':
+					$this_option_name = "Ссылка на чат WhatsApp";
+					break;
+				case 'raduga10_vk_field':
+					$this_option_name = "Ссылка на группу в vk";
+					break;
+			}
+
+			add_settings_field( 
+				"$options_names[$i]" . '_id', 
+				"$this_option_name", 
+				'raduga10_extra_fields_callback', 
+				'general', 
+				'default', 
+				array( 
+					'id' => "$options_names[$i]" . '_id', 
+					'option_name' => "$options_names[$i]"
+				)
+			);
+	}
+
+	
+
+	
+}
+
+function raduga10_extra_fields_callback( $val ){
+	$id = $val['id'];
+	$option_name = $val['option_name'];
+	?>
+	
+	<input type="text" name="<?echo $option_name ?>" id="<? echo $id ?>" value="<? echo esc_attr( get_option($option_name) ) ?>" class="regular-text code" >
+
+	<?
+}
+add_action('admin_menu', 'raduga10_add_phone_field_to_admin_page');
