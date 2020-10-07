@@ -176,49 +176,7 @@
 						<!--=======  cart icon  =======-->
 						
 						<div class="minicart-section">
-							<!-- <a href="#" id="cart-icon">
-								<span class="image"><i class="icon ion-md-cart"></i></span>
-								<h5>$215.00 <i class="fa fa-angle-down"></i></h5>
-								<p>3 items</p>
-							</a> -->
-	
-							<!-- cart floating box -->
-							<!-- <div class="cart-floating-box hidden" id="cart-floating-box">
-								<div class="cart-items">
-									<div class="cart-float-single-item d-flex">
-										<span class="remove-item" id="remove-item"><a href="#"><i class="icon ion-md-close"></i></a></span>
-										<div class="cart-float-single-item-image">
-											<a href="single-product.html"><img src="assets/images/products/product01.jpg" class="img-fluid" alt=""></a>
-										</div>
-										<div class="cart-float-single-item-desc">
-											<p class="product-title"> <a href="single-product.html">Duis pulvinar obortis eleifend </a></p>
-											<p class="quantity"> Qty: 1</p>
-											<p class="price">$20.50</p>
-										</div>
-									</div>
-									<div class="cart-float-single-item d-flex">
-										<span class="remove-item"><a href="#"><i class="icon ion-md-close"></i></a></span>
-										<div class="cart-float-single-item-image">
-											<a href="single-product.html"><img src="assets/images/products/product02.jpg" class="img-fluid" alt=""></a>
-										</div>
-										<div class="cart-float-single-item-desc">
-											<p class="product-title"> <a href="single-product.html">Fusce ultricies dolor vitae</a></p>
-											<p class="quantity"> Qty: 1</p>
-											<p class="price">$20.50</p>
-										</div>
-									</div>
-								</div>
-								<div class="cart-calculation">
-									<div class="calculation-details">
-										<p class="total">Subtotal <span>$22</span></p>
-									</div>
-									<div class="floating-cart-btn text-center">
-										<a class="fl-btn pull-left" href="cart.html">View Cart</a>
-										<a class="fl-btn pull-right" href="checkout.html">Checkout</a>
-									</div>
-								</div>
-							</div> -->
-							<!-- end of cart floating box -->
+							
 							<?php
 							if ( function_exists( 'raduga10_woocommerce_cart_link' ) ) {
 								raduga10_woocommerce_cart_link();

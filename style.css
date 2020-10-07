@@ -63,3 +63,33 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	 ========================================================================== */
 
 
+
+/*****************/
+/***** FIXES *****/
+/*****************/
+
+
+/**** HEADER ****/
+.navigation-menu-top .minicart-section > a {
+
+    padding-left: 40px;
+
+}
+
+
+.navigation-menu-top .minicart-section > a > span.amount {
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 500;
+    color: #9acf6a;
+    font-style: normal;
+    margin-bottom: 0;
+}
+
+.navigation-menu-top .minicart-section > a > span.amount, 
+.navigation-menu-top .minicart-section > a > span.count { 
+	    display: inline-block;
+	
+}
+
+
