@@ -193,10 +193,27 @@
 						<div class="minicart-section">
 							
 							<?php
-							if ( function_exists( 'raduga10_woocommerce_cart_link' ) ) {
-								raduga10_woocommerce_cart_link();
-							}
+							// if ( function_exists( 'raduga10_woocommerce_cart_link' ) ) {
+							// 	raduga10_woocommerce_cart_link();
+							// }
+							
+							// $instance = array(	
+							// 	'title' => '',	
+							// );	
+							// the_widget( 'WC_Widget_Cart', $instance );
+
+							// if ( function_exists( 'raduga10_woocommerce_header_cart' ) ) {
+							// 	raduga10_woocommerce_header_cart();
+							// }
+
 						?>
+
+
+<?php	
+		if ( function_exists( 'raduga10_woocommerce_header_cart' ) ) {	
+			raduga10_woocommerce_header_cart();	
+		}	
+	?>	
 						</div>
 
 					

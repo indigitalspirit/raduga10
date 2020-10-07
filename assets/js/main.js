@@ -113,8 +113,24 @@
 
 	/*----------    cart minibox toggle  ----------*/
 
-	$("#cart-icon").on("click", function (event) {
-		event.stopPropagation();
+	// $("#cart-icon").on("click", function (event) {
+	// 	event.stopPropagation();
+	// 	$("#cart-floating-box").slideToggle();
+	// 	$("#accountList").slideUp("slow");
+	// 	$("#languageList").slideUp("slow");
+
+	// });
+
+	// $("body:not(#cart-icon)").on("click", function () {
+	// 	$("#cart-floating-box").slideUp("slow");
+	// });
+
+	console.log('hover cart before');
+
+	$(".minicart-section").on("mouseenter", function (event) {
+		//event.stopPropagation();
+		console.log('hover cart');
+
 		$("#cart-floating-box").slideToggle();
 		$("#accountList").slideUp("slow");
 		$("#languageList").slideUp("slow");

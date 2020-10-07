@@ -92,4 +92,120 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	
 }
 
+/**** HEADER SHOP CART ****/
+.woocommerce-mini-cart-item.mini_cart_item {
+	position: relative;
+    border-bottom: 1px solid #ebebeb;
+    padding: 15px 0;
+}
+
+.woocommerce-mini-cart-item.mini_cart_item a.remove.remove_from_cart_button {
+	position: absolute;
+    top: 15px;
+    right: -5px;
+    font-size: 15px;
+	background-color: #eaeaea;
+    color: #2c2c2c;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    line-height: 20px;
+    text-align: center;
+}
+
+.minicart-section span#cart-icon {
+	position: absolute;
+    top: 5px;
+    left: 120px;
+}
+
+    position: absolute;
+    top: 5px;
+    left: 120px;
+
+.woocommerce-mini-cart-item.mini_cart_item a:nth-child(2) {
+/* 	width: 150px; */
+    margin-right: 10px;
+	font-weight: 400;
+    color: #2c2c2c;
+    font-size: 14px;
+    line-height: 25px;
+
+}
+
+.woocommerce-mini-cart-item.mini_cart_item a:nth-child(2) img {
+	max-width: 120px;
+    height: auto;
+    display: inline-block;
+    border: 1px solid #ddd;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    margin-right: 15px;
+}
+
+
+.woocommerce-mini-cart-item.mini_cart_item span.quantity { 
+	margin-bottom: 5px;
+}
+
+.woocommerce-mini-cart-item.mini_cart_item span.woocommerce-Price-amount.amount {
+	font-size: 16px;
+    font-weight: 500;
+    color: #9acf6a;
+}
+ 
+
+.woocommerce-mini-cart__total.total {
+	    margin-top: 20px;
+}
+
+.woocommerce-mini-cart__total.total strong {
+	margin-bottom: 20px;
+	font-weight: 600;
+    text-transform: uppercase;
+    color: #2c2c2c;
+    font-size: 18px;
+    line-height: 20px;
+	
+}
+
+span.woocommerce-Price-amount.amount {
+/* 	float: right; */
+	font-weight: 600;
+    text-transform: uppercase;
+    color: #2c2c2c;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.woocommerce-mini-cart__buttons.buttons {
+	
+}
+
+.woocommerce-mini-cart__buttons.buttons a.button {
+	background: #f2f2f2;
+    line-height: 12px;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 3px;
+    color: #363f4d;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+	
+	
+	display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
 

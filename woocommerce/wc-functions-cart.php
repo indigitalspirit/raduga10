@@ -42,8 +42,9 @@ if ( ! function_exists( 'raduga10_woocommerce_cart_link' ) ) {
 	 */	
 	function raduga10_woocommerce_cart_link() {	
 		?>	
-		<span class="image"><i class="icon ion-md-cart"></i></span>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'raduga10' ); ?>">	
+		<!-- <span class="image"><a href="<?php echo esc_url( wc_get_cart_url() ); ?>"><i class="icon ion-md-cart"></i></a></span> -->
+		
+		<a class="cart-contents" id="cart-icon" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'raduga10' ); ?>">	
 			<?php	
 			$item_count_text = sprintf(	
 				/* translators: number of items in the mini cart. */	
@@ -52,7 +53,14 @@ if ( ! function_exists( 'raduga10_woocommerce_cart_link' ) ) {
 			);	
 			?>	
 			<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo esc_html( $item_count_text ); ?></span>	
+			
 		</a>	
+		<span id="cart-icon">
+			<i class="fa fa-angle-down"></i>
+		</span>
+		
+
+		
 		<?php	
 	}	
 }	
@@ -71,20 +79,20 @@ if ( ! function_exists( 'raduga10_woocommerce_header_cart' ) ) {
 			$class = '';	
 		}	
 		?>	
-		<ul id="site-header-cart" class="site-header-cart">	
-			<li class="<?php echo esc_attr( $class ); ?>">	
-				<?php raduga10_woocommerce_cart_link(); ?>	
-			</li>	
-			<li>	
-				<?php	
-				$instance = array(	
-					'title' => '',	
-				);	
+		<?php raduga10_woocommerce_cart_link(); ?>
+			<div class="cart-floating-box hidden" id="cart-floating-box" style="">							
+				<ul id="site-header-cart" class="site-header-cart cart-items">	
+					<li>	
+						<?php	
+						$instance = array(	
+							'title' => '',	
+						);	
 
-				the_widget( 'WC_Widget_Cart', $instance );	
-				?>	
-			</li>	
-		</ul>	
+						the_widget( 'WC_Widget_Cart', $instance );	
+						?>	
+					</li>	
+				</ul>
+			</div>	
 		<?php	
 	}	
 }
