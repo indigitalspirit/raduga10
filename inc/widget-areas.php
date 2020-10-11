@@ -11,17 +11,17 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function raduga10_widgets_init() {
-	// register_sidebar(
-	// 	array(
-	// 		'name'          => esc_html__( 'Sidebar', 'raduga10' ),
-	// 		'id'            => 'sidebar-1',
-	// 		'description'   => esc_html__( 'Add widgets here.', 'raduga10' ),
-	// 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-	// 		'after_widget'  => '</section>',
-	// 		'before_title'  => '<h2 class="widget-title">',
-	// 		'after_title'   => '</h2>',
-	// 	)
-	// );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Боковое меню на внутренних страницах сайта', 'raduga10' ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'Add widgets here.', 'raduga10' ),
+			'before_widget' => '<div class="single-sidebar">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="sidebar-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 
 
 	register_sidebar( array(

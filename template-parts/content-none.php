@@ -9,43 +9,33 @@
 
 ?>
 
-<section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'raduga10' ); ?></h1>
-	</header><!-- .page-header -->
 
-	<div class="page-content">
-		<?php
-		if ( is_home() && current_user_can( 'publish_posts' ) ) :
+<!--=======  slider banner  =======-->
+<div class="slider-banner home-one-banner banner-bg banner-bg-1 mb-30">
+	<div class="banner-text">
+			<h1>
+			<?php esc_html_e( 'Nothing Found', 'raduga10' ); ?>
+			</h1>
+			<!-- <p class="big-text">Lamps Light Color</p>
+			<p>Only from $209</p> -->
 
-			printf(
-				'<p>' . wp_kses(
-					/* translators: 1: link to WP admin new post page. */
-					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'raduga10' ),
-					array(
-						'a' => array(
-							'href' => array(),
-						),
-					)
-				) . '</p>',
-				esc_url( admin_url( 'post-new.php' ) )
-			);
+			
+	</div>
+</div>
+<!--=======  End of slider banner  =======-->
 
-		elseif ( is_search() ) :
-			?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'raduga10' ); ?></p>
-			<?php
-			get_search_form();
+<div class="shop-page-content mb-50">
+	<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'raduga10' ); ?></p>
+					<?php
+						get_search_form();
+					?>
+				</div>
+			</div>
+	</div>
+</div>
 
-		else :
-			?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'raduga10' ); ?></p>
-			<?php
-			get_search_form();
-
-		endif;
-		?>
-	</div><!-- .page-content -->
-</section><!-- .no-results -->
