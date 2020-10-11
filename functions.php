@@ -51,6 +51,11 @@ require get_template_directory() . '/inc/helpers.php';
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
+ * Implement the Custom Footer feature.
+ */
+require get_template_directory() . '/inc/custom-footer.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
