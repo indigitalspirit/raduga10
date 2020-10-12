@@ -56,6 +56,11 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/custom-footer.php';
 
 /**
+ * Implement the Custom Breadcrumbs feature.
+ */
+require get_template_directory() . '/inc/custom-breadcrumbs.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
