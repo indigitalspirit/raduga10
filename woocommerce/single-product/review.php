@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 
-	<div id="comment-<?php comment_ID(); ?>" class="comment_container">
+	<div id="comment-<?php comment_ID(); ?>" class="comment_container sin-rattings">
 
 		<?php
 		/**
@@ -35,7 +35,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 		<div class="comment-text">
-
+		<div class="ratting-author">
+                                               
+                                                
+                                          
 			<?php
 			/**
 			 * The woocommerce_review_before_comment_meta hook.
@@ -50,6 +53,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			 * @hooked woocommerce_review_display_meta - 10
 			 */
 			do_action( 'woocommerce_review_meta', $comment );
+			
+			?>
+			  </div>
+			
+			<?
 
 			do_action( 'woocommerce_review_before_comment_text', $comment );
 

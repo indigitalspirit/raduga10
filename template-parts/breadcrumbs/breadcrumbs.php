@@ -11,6 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
+<!--=============================================
+	=            breadcrumb area         =
+	=============================================-->
 
 <div class="breadcrumb-area pt-15 pb-15">
 		<div class="container">
@@ -27,3 +30,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</div>
 	</div>
+
+<!--=====  End of breadcrumb area  ======-->

@@ -25,6 +25,7 @@
 	 * @hooked raduga10_navigationandwidgets_callback - 20
 	 * @hooked raduga10_copyright_callback - 30
 	 * @hooked raduga10_footer_end - 40
+	 * @hooked raduga10_quick_view_modal_callback - 45
 	 *
 	 */
 	do_action( 'raduga10_footer_parts' ); 

@@ -23,85 +23,90 @@ get_header();
 	<!--=====  End of breadcrumb area  ======-->
 
 
-	<!--=============================================
+		<!--=============================================
 	=            FAQ page content         =
 	=============================================-->
 
 
 	<div class="page-section mb-50">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-5 col-md-12 mb-sm-45  mb-md-45">
-					<!--=======  contact page side content  =======-->
-					
-					<div class="contact-page-side-content">
-						
+			<div class="row row-30">
 
-						<!--=======  single contact block  =======-->
-						
-						<div class="single-contact-block">
-							<h4><i class="fa fa-phone"></i> +79814024614</h4>
-
-							<p>Менеджеры магазина принимают звонки ежедневно, с ХХ до ХХ</p>
-						</div>
-						
-            <!--=======  End of single contact block  =======-->
-            
-            
-						<!--=======  single contact block  =======-->
-						
-						<div class="single-contact-block">
-							<h4><i class="fa fa-fax"></i> Адрес магазина: г. Сегежа, ул. Северная,
-                д. 3, ТЦ "Радуга"</h4>
-						
-						</div>
-						
-						<!--=======  End of single contact block  =======-->
-
-						<!--=======  single contact block  =======-->
-						
-						<div class="single-contact-block">
-							<h4><i class="fa fa-clock-o"></i> Ежедневно: с 10:00 до 19:00</h4>
-							
-						</div>
-						
-						<!--=======  End of single contact block  =======-->
-					</div>
-					
-					<!--=======  End of contact page side content  =======-->
-
+				<!-- About Image -->
+				<div class="about-image col-lg-6 mb-50">
+					<img src="assets/images/sliders/blog/03.jpg" alt="">
 				</div>
-				<div class="col-lg-6 col-md-12 order-2 order-lg-1">
-					<!--=======  contact form content  =======-->
+
+				<!-- About Content -->
+				<div class="about-content col-lg-6">
+					<div class="row">
 					
-					<div class="contact-map">
-						<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A234c0c4eeeae2a2a10c87f4a7b1326e16968cfc04b24665f735d716204cfeab7&amp;width=100%25&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
+
+						<div class="col-12 mb-20">
+							<h2>Несколько фактов о нас</h2>
+							<p> предлагаем мягкую и корпусную мебель  
+								по оптимальным ценам</p>
+							<p>
+								поставщики мебели - из Санкт-Петербурга
+							</p>
+							<p>
+								работаем больше года
+							</p>
+							<p>
+								доставка - по Карелии и всей России
+							</p>
+
+						</div>
+
+						
+
 					</div>
-					
-					<!--=======  End of contact form content =======-->
 				</div>
+				
+				
+				
+				
+				
 			</div>
-		</div>
-	</div>
 
 
-	<!--=====  End of FAQ page content  ======-->
 
-
-	<!--=============================================
-	=           lead form 
-	=============================================-->
-	
-	<div class="lead-contacts mb-50">
-		<div class="container">
 			<div class="row">
-				<div class="col-12">
+				<div class="col-12 col-md-6">
+					<div class="row">
+						<div class="col-12">
+							<h2 class="contact-page-title">Мы в соцсетях </h2>
+						<p>
+							<i class="fa fa-vk"></i>
+							<a href="https://vk.com/salon_mebeli_segeza" class="vk" data-tooltip="vk">https://vk.com/salon_mebeli_segeza</a>
+							<div>
+								<a href=" https://vk.com/club175668276" class="vk" data-tooltip="vk"> https://vk.com/club175668276</a>
+							</div>
+						</p>
+						</div>
+						<div class="col-12" >
+							<h2 class="contact-page-title">Другие наши магазины</h2>
+						<p>
+							ссылка на сайт + краткое описание
+						</p>
+						<p>
+							ссылка на сайт + краткое описание
+						</p>
+						
+						</div>
+
+					</div>
+					
+					
+				</div>
+
+				<div class="col-12 col-md-6">
 					<!--=======  contact form content  =======-->
 					
 					<div class="contact-form-content">
-						<h2 class="contact-page-title">Остались вопросы?</h2>
+						<h2 class="contact-page-title">Есть вопросы? </h2>
 						<p>
-							Напишите нам!
+							Напишите нам, заполнив форму ниже, или позвоните по тел.: ХХХХХХХ
 						</p>
 
 						<div class="contact-form">
@@ -140,5 +145,28 @@ get_header();
 	</div>
 
 
+	<!--=====  End of FAQ page content  ======-->
+
+
+
+
+	<!--=============================================
+	=           lead form 
+	=============================================-->
+	
+	<div class="lead-contacts mb-50">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
 <?php 
+
 get_footer(); 

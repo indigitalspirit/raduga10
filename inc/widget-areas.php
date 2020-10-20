@@ -22,6 +22,16 @@ function raduga10_widgets_init() {
 			'after_title'   => '</h3>',
 		)
 	);
+	
+	register_sidebar( array(
+		'name'          => esc_html__( 'Сайдбар магазина', 'raduga10' ),
+		'id'            => 'sidebar-shop',
+		'description'   => esc_html__( 'Add widgets here.', 'raduga10' ),
+		'before_widget' => '<div class="single-sidebar">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="sidebar-title">',
+		'after_title'   => '</h3>',
+	) );
 
 
 	register_sidebar( array(
