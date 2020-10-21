@@ -24,7 +24,7 @@ get_header();
 
 
 	<!--=============================================
-	=            FAQ page content         =
+	=            CONTACTS page content         =
 	=============================================-->
 
 
@@ -36,13 +36,33 @@ get_header();
 					
 					<div class="contact-page-side-content">
 						
-
 						<!--=======  single contact block  =======-->
+
+						<?php 
+							$shop_phone = get_option( 'raduga10_phone_field');
+							$shop_address = get_option( 'raduga10_address_field');
+							$shop_shedule = get_option( 'raduga10_shedule_field');
+
+							//Screen 1 ACF fields
+							$contacts_sc1_manager_text = get_field("contacts_sc1_manager_text");
+							$contacts_sc1_map = get_field("contacts_sc1_map");
+
+							//Screen 2 ACF fields
+							$contacts_sc2_title_form = get_field("contacts_sc2_title_form");
+							$contacts_sc2_subtitle_form = get_field("contacts_sc2_subtitle_form");
+						?>
 						
 						<div class="single-contact-block">
-							<h4><i class="fa fa-phone"></i> +79814024614</h4>
+							<h4>
+								<i class="fa fa-phone"></i> 
+								<a href="tel:<?php echo trim($shop_phone);?>">
+									<?php echo $shop_phone;?>
+								</a>
+							</h4>
 
-							<p>Менеджеры магазина принимают звонки ежедневно, с ХХ до ХХ</p>
+							<p>
+								<?php echo $contacts_sc1_manager_text;?>
+							</p>
 						</div>
 						
             <!--=======  End of single contact block  =======-->
@@ -51,8 +71,10 @@ get_header();
 						<!--=======  single contact block  =======-->
 						
 						<div class="single-contact-block">
-							<h4><i class="fa fa-fax"></i> Адрес магазина: г. Сегежа, ул. Северная,
-                д. 3, ТЦ "Радуга"</h4>
+							<h4>
+								<i class="fa fa-fax"></i> 
+								<?php echo $shop_address;?>
+							</h4>
 						
 						</div>
 						
@@ -61,7 +83,10 @@ get_header();
 						<!--=======  single contact block  =======-->
 						
 						<div class="single-contact-block">
-							<h4><i class="fa fa-clock-o"></i> Ежедневно: с 10:00 до 19:00</h4>
+							<h4>
+								<i class="fa fa-clock-o"></i>
+								<?php echo $shop_shedule;?>
+							</h4>
 							
 						</div>
 						
@@ -75,7 +100,8 @@ get_header();
 					<!--=======  contact form content  =======-->
 					
 					<div class="contact-map">
-						<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A234c0c4eeeae2a2a10c87f4a7b1326e16968cfc04b24665f735d716204cfeab7&amp;width=100%25&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
+						<?php echo $contacts_sc1_map;?>
+						 
 					</div>
 					
 					<!--=======  End of contact form content =======-->
@@ -85,7 +111,7 @@ get_header();
 	</div>
 
 
-	<!--=====  End of FAQ page content  ======-->
+	<!--=====  End of CONTACTS page content  ======-->
 
 
 	<!--=============================================
@@ -99,13 +125,15 @@ get_header();
 					<!--=======  contact form content  =======-->
 					
 					<div class="contact-form-content">
-						<h2 class="contact-page-title">Остались вопросы?</h2>
+						<h2 class="contact-page-title">
+						<?php echo $contacts_sc2_title_form;?>
+						</h2>
 						<p>
-							Напишите нам!
+						<?php echo $contacts_sc2_subtitle_form;?>
 						</p>
 
 						<div class="contact-form">
-							<form id="contact-form" action="assets/php/mail.php" method="post">
+							<!-- <form id="contact-form" action="assets/php/mail.php" method="post">
 								<div class="form-group">
 									<label>Ваше имя: <span class="required">*</span></label>
 									<input type="text" name="customerName" id="customername" required="">
@@ -128,9 +156,10 @@ get_header();
 										Нажимая на кнопку "Отправить", вы соглашаетесь с <a href="#">"Политикой конфиденциальности"</a>
 									</span>
 								</div>
-							</form>
+							</form> -->
+							<?php echo do_shortcode('[contact-form-7 id="182" title="Заявка на главной"]'); ?>
 						</div>
-						<p class="form-messege pt-10 pb-10 mt-10 mb-10"></p>
+						<!-- <p class="form-messege pt-10 pb-10 mt-10 mb-10"></p> -->
 					</div>
 					
 					<!--=======  End of contact form content =======-->

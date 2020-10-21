@@ -24,8 +24,24 @@ get_header();
 
 
 		<!--=============================================
-	=            FAQ page content         =
+	=            ABOUT page content         =
 	=============================================-->
+
+
+	<?php
+		//Screen 1 ACF fields
+		$about_sc1_title = get_field("about_sc1_title");
+		$about_sc1_text = get_field("about_sc1_text");
+		$about_sc1_img = get_field("about_sc1_img");
+
+		//Screen 2 ACF fields
+		$about_sc2_title_socials = get_field("about_sc2_title_socials");
+		$about_sc2_links_socials = get_field("about_sc2_links_socials");
+		$about_sc2_title_other = get_field("about_sc2_title_other");
+		$about_sc2_links = get_field("about_sc2_links");
+		$about_sc2_title_form = get_field("about_sc2_title_form");
+		$about_sc2_subtitle_form = get_field("about_sc2_subtitle_form");
+	?>
 
 
 	<div class="page-section mb-50">
@@ -34,83 +50,96 @@ get_header();
 
 				<!-- About Image -->
 				<div class="about-image col-lg-6 mb-50">
-					<img src="assets/images/sliders/blog/03.jpg" alt="">
+					<img src="<?php echo $about_sc1_img; ?>" alt="<?php echo $about_sc1_title; ?>">
 				</div>
 
 				<!-- About Content -->
 				<div class="about-content col-lg-6">
 					<div class="row">
-					
-
 						<div class="col-12 mb-20">
-							<h2>Несколько фактов о нас</h2>
-							<p> предлагаем мягкую и корпусную мебель  
-								по оптимальным ценам</p>
-							<p>
-								поставщики мебели - из Санкт-Петербурга
-							</p>
-							<p>
-								работаем больше года
-							</p>
-							<p>
-								доставка - по Карелии и всей России
-							</p>
-
+							<h2>
+							<?php echo $about_sc1_title; ?>
+							</h2>
+							<div>
+							<?php echo $about_sc1_text; ?>
+							</div>
 						</div>
-
-						
-
 					</div>
-				</div>
-				
-				
-				
-				
+				</div>			
 				
 			</div>
-
-
 
 			<div class="row">
 				<div class="col-12 col-md-6">
 					<div class="row">
 						<div class="col-12">
-							<h2 class="contact-page-title">Мы в соцсетях </h2>
-						<p>
-							<i class="fa fa-vk"></i>
-							<a href="https://vk.com/salon_mebeli_segeza" class="vk" data-tooltip="vk">https://vk.com/salon_mebeli_segeza</a>
+							<h2 class="contact-page-title">
+							<?php echo $about_sc2_title_socials; ?>
+							</h2>
+
+							<?php 
+								// $shop_whatsapp = get_option( 'raduga10_whatsapp_field');
+								// $shop_vk = get_option( 'raduga10_vk_field');
+							?>
+
+						<?php 
+							if( $about_sc2_links_socials['about_sc2_links_socials_1']['about_sc2_links_socials_link']  != '' ): 
+						?>
+						<div>
+							<?php 
+							 	foreach($about_sc2_links_socials as $links_socials) {
+							?>
+
 							<div>
-								<a href=" https://vk.com/club175668276" class="vk" data-tooltip="vk"> https://vk.com/club175668276</a>
+								<?php echo $links_socials['about_sc2_links_socials_icon']; ?>
+								<a href="<?php echo $links_socials['about_sc2_links_socials_link']; ?>" target="_blank">
+									<?php echo $links_socials['about_sc2_links_socials_link']; ?>
+								</a>
 							</div>
-						</p>
+
+							<?php
+								 }
+							?>
+						</div>
+						<?php endif;?>
+
 						</div>
 						<div class="col-12" >
-							<h2 class="contact-page-title">Другие наши магазины</h2>
-						<p>
-							ссылка на сайт + краткое описание
-						</p>
-						<p>
-							ссылка на сайт + краткое описание
-						</p>
-						
-						</div>
+							<h2 class="contact-page-title">
+								<?php echo $about_sc2_title_other; ?>
+							</h2>
 
+							<?php 
+								if( $about_sc2_links['about_sc2_link_1'] != '' ): 
+							?>
+								<div>
+									<?php 
+										foreach( $about_sc2_links as $about_link) {
+									?>
+										<a href="<?php echo $about_link; ?>">
+											<?php echo $about_link; ?>
+										</a>
+									<?php
+										}
+									?>
+								</div>
+							<?php endif;?>		
+						</div>
 					</div>
-					
-					
 				</div>
 
 				<div class="col-12 col-md-6">
 					<!--=======  contact form content  =======-->
-					
 					<div class="contact-form-content">
-						<h2 class="contact-page-title">Есть вопросы? </h2>
+						<h2 class="contact-page-title">
+							<?php echo $about_sc2_title_form; ?>
+						</h2>
 						<p>
-							Напишите нам, заполнив форму ниже, или позвоните по тел.: ХХХХХХХ
+							<?php echo $about_sc2_subtitle_form; ?>
 						</p>
 
 						<div class="contact-form">
-							<form id="contact-form" action="assets/php/mail.php" method="post">
+							<!-- <form id="contact-form" action="assets/php/mail.php" method="post">
 								<div class="form-group">
 									<label>Ваше имя: <span class="required">*</span></label>
 									<input type="text" name="customerName" id="customername" required="">
@@ -133,9 +162,10 @@ get_header();
 										Нажимая на кнопку "Отправить", вы соглашаетесь с <a href="#">"Политикой конфиденциальности"</a>
 									</span>
 								</div>
-							</form>
+							</form> -->
+							<?php echo do_shortcode('[contact-form-7 id="182" title="Заявка на главной"]'); ?>
 						</div>
-						<p class="form-messege pt-10 pb-10 mt-10 mb-10"></p>
+						<!-- <p class="form-messege pt-10 pb-10 mt-10 mb-10"></p> -->
 					</div>
 					
 					<!--=======  End of contact form content =======-->
@@ -145,26 +175,7 @@ get_header();
 	</div>
 
 
-	<!--=====  End of FAQ page content  ======-->
-
-
-
-
-	<!--=============================================
-	=           lead form 
-	=============================================-->
-	
-	<div class="lead-contacts mb-50">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					
-				</div>
-			</div>
-		</div>
-	</div>
-
-
+	<!--=====  End of ABOUT page content  ======-->
 
 
 <?php 

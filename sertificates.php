@@ -23,8 +23,21 @@ get_header();
 	<!--=====  End of breadcrumb area  ======-->
 
 
+
+	<?php
+		//Screen 1 ACF fields
+		$sertificates_sc1_text = get_field("sertificates_sc1_text");
+		$sertificates_sc1_left_block = get_field("sertificates_sc1_left_block");
+		$sertificates_sc1_img = get_field("sertificates_sc1_img");
+
+		//Screen 2 ACF fields
+		$sertificates_sc2_title_form = get_field("sertificates_sc2_title_form");
+		$sertificates_sc2_subtitle_form = get_field("sertificates_sc2_subtitle_form");
+		?>
+
+
 	<!--=============================================
-	=            FAQ page content         =
+	=            SERTIFICATES page content         =
 	=============================================-->
 
 
@@ -36,46 +49,38 @@ get_header();
 				<div class="about-content col-lg-6">
 					<div class="row">
 						<div class="col-12 mb-20">
-							<p>Сертификат на покупку мебели в нашем магазине - отличный  подарок для ваших близких и друзей!
- 
-								</p>
+							<?php echo $sertificates_sc1_text; ?>
 						</div>
 
-						<div class="col-12 mb-40">
-							<p>Сертификат действителен в течение X дней после покупки. Им можно оплатить любой товар в нашем магазине</p>
-						</div>
-
+					<?php foreach( $sertificates_sc1_left_block as $sertificates_block ) { ?>
 						<div class="col-12 mb-20">
-							<h4>Как купить?</h4>
-							<p>Вы можете приобрести сертификаты номиналом X и Y на кассе магазина</p>
+							<h4>
+							<?php echo $sertificates_block['sertificates_sc1_left_block_item_title']; ?>
+							</h4>
+							<p>
+							<?php echo $sertificates_block['sertificates_sc1_left_block_item_text']; ?>
+							</p>
 						</div>
-
-						<div class="col-12 mb-20">
-							<h4>Как потратить?</h4>
-							<p>Покажите сертификат менеджеру при оплате в магазине</p>
-						</div>
+					<?php } ?>
+					
 
 					</div>
 				</div>
 				
 				<!-- About Image -->
 				<div class="about-image col-lg-6 mb-50">
-					<img src="assets/images/sliders/blog/03.jpg" alt="">
+					<img src="<?php echo $sertificates_sc1_img;?>" alt="">
 				</div>
 				
 				
 				
 			</div>
-			<div class="row">
-				<div class="col-lg-12">
-					
-				</div>
-			</div>
+
 		</div>
 	</div>
 
 
-	<!--=====  End of FAQ page content  ======-->
+	<!--=====  End of SERTIFICATES page content  ======-->
 
 
 
@@ -91,13 +96,16 @@ get_header();
 					<!--=======  contact form content  =======-->
 					
 					<div class="contact-form-content">
-						<h2 class="contact-page-title">Есть вопросы? </h2>
+						<h2 class="contact-page-title">
+						<?php echo $sertificates_sc2_title_form;?>
+						 </h2>
 						<p>
-							Напишите нам, заполнив форму ниже, или позвоните по тел.: ХХХХХХХ
+						<?php echo $sertificates_sc2_subtitle_form;?>
 						</p>
 
 						<div class="contact-form">
-							<form id="contact-form" action="assets/php/mail.php" method="post">
+						<?php echo do_shortcode('[contact-form-7 id="182" title="Заявка на главной"]'); ?>
+							<!-- <form id="contact-form" action="assets/php/mail.php" method="post">
 								<div class="form-group">
 									<label>Ваше имя: <span class="required">*</span></label>
 									<input type="text" name="customerName" id="customername" required="">
@@ -120,9 +128,9 @@ get_header();
 										Нажимая на кнопку "Отправить", вы соглашаетесь с <a href="#">"Политикой конфиденциальности"</a>
 									</span>
 								</div>
-							</form>
+							</form> -->
 						</div>
-						<p class="form-messege pt-10 pb-10 mt-10 mb-10"></p>
+						<!-- <p class="form-messege pt-10 pb-10 mt-10 mb-10"></p> -->
 					</div>
 					
 					<!--=======  End of contact form content =======-->

@@ -24,8 +24,25 @@ get_header();
 
 
 		<!--=============================================
-	=            FAQ page content         =
+	=            DELIVERY AND PRICE page content         =
 	=============================================-->
+
+	<?php
+		//Screen 1 ACF fields
+		$delivery_sc1_title = get_field("delivery_sc1_title");
+		$delivery_sc1_text_left = get_field("delivery_sc1_text_left");
+		$delivery_sc1_text_right = get_field("delivery_sc1_text_right");
+		$delivery_sc1_map = get_field("delivery_sc1_map");
+		$delivery_sc2_title_form = get_field("delivery_sc2_title_form");
+		$delivery_sc2_subtitle_form = get_field("delivery_sc2_subtitle_form");
+
+
+		//Screen 2 ACF fields
+		$delivery_sc2_title_left = get_field("delivery_sc2_title_left");
+		$delivery_sc2_list_left = get_field("delivery_sc2_list_left");
+		$delivery_sc2_title_right = get_field("delivery_sc2_title_right");
+		$delivery_sc2_text_right = get_field("delivery_sc2_text_right");
+	?>
 
 
 	<div class="page-section mb-50">
@@ -34,22 +51,14 @@ get_header();
 				<div class="col-lg-5 col-md-12 mb-sm-45  mb-md-45">
 					<div class="row">
 						<div class="col-12 mb-50">
-							<h1>Доставка</h1>
-							<p>Бесплатно доставим заказ до двери в пределах города ( г. Сегежа)</p>
- 
-								<p>Стоимость доставки по Карелии - от 300 р., в зависимости от района.</p>
-								 
-								<p>Полную стоимость можно узнать у менеджера магазина по тел. ХХХХХХХХХ, или оставив заявку в форме ниже.</p>
-								 
-								<p>Возможен самовывоз товара: ежедневно, с Х до Х</p>
+							<h1>
+								<?php echo $delivery_sc1_title; ?>
+							</h1>
 
-								<p>
-									<!-- <i class="icon ion-md-alarm"></i>  -->
-									<i class="fa fa-map-marker" aria-hidden="true"></i>
-									<span class="support-no">
-										<a href="tel:89814024614">Адрес магазина: <br>г. Сегежа, ул. Северная д. 3 ТЦ "Радуга"</a>
-									</span>
-								</p>
+							<div>
+							<?php echo $delivery_sc1_text_left; ?>
+							</div>
+							
 						</div>
 
 						
@@ -59,7 +68,7 @@ get_header();
 					<div class="row">
 						<div class="col-12 mb-50">
 						<div class="contact-map">
-							<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A234c0c4eeeae2a2a10c87f4a7b1326e16968cfc04b24665f735d716204cfeab7&amp;width=400&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
+							<?php echo $delivery_sc1_map; ?>
 						</div>
 						</div>
 					</div>
@@ -70,9 +79,7 @@ get_header();
 					<div class="row">
 					<div class="col-12 mb-50">
 						
-						<p>Также, наши мастера предоставляют услуги по сборки мебели на дому.</p>
- 
-							<p>Выбрать мастера и оставить заявку вы можете по тел. ХХХХХХХХ, или заполнив форму:</p>
+						<?php echo $delivery_sc1_text_right; ?>
 					</div>
 					</div>
 
@@ -81,13 +88,16 @@ get_header();
 							<!--=======  contact form content  =======-->
 							
 							<div class="contact-form-content">
-								<h2 class="contact-page-title">Остались вопросы?</h2>
+								<h2 class="contact-page-title">
+									<?php echo $delivery_sc2_title_form; ?>
+								</h2>
 								<p>
-									Напишите нам!
+									<?php echo $delivery_sc2_subtitle_form; ?>
 								</p>
 		
 								<div class="contact-form">
-									<form id="contact-form" action="assets/php/mail.php" method="post">
+									<?php echo do_shortcode('[contact-form-7 id="182" title="Заявка на главной"]'); ?>
+									<!-- <form id="contact-form" action="assets/php/mail.php" method="post">
 										<div class="form-group">
 											<label>Ваше имя: <span class="required">*</span></label>
 											<input type="text" name="customerName" id="customername" required="">
@@ -110,19 +120,14 @@ get_header();
 												Нажимая на кнопку "Отправить", вы соглашаетесь с <a href="#">"Политикой конфиденциальности"</a>
 											</span>
 										</div>
-									</form>
+									</form> -->
 								</div>
-								<p class="form-messege pt-10 pb-10 mt-10 mb-10"></p>
+								<!-- <p class="form-messege pt-10 pb-10 mt-10 mb-10"></p> -->
 							</div>
 							
 							<!--=======  End of contact form content =======-->
 						</div>
 					</div>
-
-
-					
-					
-					
 					<!--=======  End of contact form content =======-->
 				</div>
 			</div>
@@ -130,7 +135,7 @@ get_header();
 	</div>
 
 
-	<!--=====  End of FAQ page content  ======-->
+	<!--=====  End of DELIVERY AND PRICE page content  ======-->
 
 
 
@@ -143,58 +148,35 @@ get_header();
 		<div class="container">
 			<div class="row mb-30">
 				
-				<!-- About Section Title -->
-				<!-- <div class="about-section-title col-12 mb-50">
-					
-				
-				</div> -->
-
 				<!-- About Feature -->
 				<div class="about-feature col-md-6 col-12 mb-sm-30">
 					<div class="row">
-						
-						<div class="col-12 mb-30">
-							<h3>Способы оплаты</h3>
 
-							<h4>Наличными</h4>
-							<ul>
-								<li>в розничном магазине на кассе</li>
-								<li>онлайн на сайте</li>
-							</ul>
-						</div>
+					<div class="col-12 mb-30">
+						<h3>
+							<?php echo $delivery_sc2_title_left; ?>
+						</h3>
+					</div>
 						
 						<div class="col-12 mb-30">
-							<h4>Банковской картой</h4>
-							<ul>
-								<li>в розничном магазине на кассе</li>
-								<li>онлайн на сайте</li>
-							</ul>
+							<?php 
+							//get_pr($delivery_sc2_list_left);
+								foreach($delivery_sc2_list_left as $delivery_item) {
+									//get_pr( $delivery_item );
+							?>
+							
+							<h4>
+								<?php echo $delivery_item['delivery_sc2_list_left_item_title']; ?>
+							</h4>
+							<div>
+								<?php echo $delivery_item['delivery_sc2_list_left_item_text']; ?>
+							</div>
+
+							<?php
+								 }
+							?>
 						</div>
 						
-						<div class="col-12 mb-30">
-							<h4>Использовать подарочный сертификат</h4>
-							<ul>
-								<li>показать при оплате на кассе</li>
-								<li>ввести промо-код с сертификата при оплате на сайте</li>
-							</ul>
-						</div>
-						
-						<div class="col-12 mb-30">
-							<h4>Оплата в кредит</h4>
-							<p>
-								Предлагаем кредит на покупку мебели в розничном магазине на выгодных условиях.
-							</p>
-							<p>
-								Сотрудничаем с банками:
-							</p>
-							 
-							<ul>
-								<li>Почта банк</li>
-								<li>Хоум-кредит</li>
-								<li>Отп банк</li>
-								<li>Совком банк</li>
-							</ul>
-						</div>
 					
 						
 					</div>
@@ -205,20 +187,15 @@ get_header();
 						<div class="row">
 							
 							<div class="col-12 mb-30">
-								<h3>Как оплатить заказ на сайте</h3>
+								<h3>
+								 <?php echo $delivery_sc2_title_right;?>
+								</h3>
 	
-								<p>Для оплаты заказа на сайте с помощью банковской карты необходимо:</p>
-								<ol>
-									<li>На странице оформления заказа выбрать вариант - «Оплата банковской картой» и нажать кнопку “Оплатить”</li>
-									<li>Система переключит Вас на страницу авторизации, где вы можете указать
-										данные банковской карты любой из платежных  систем: VISA, MasterCard, МИРе</li>
-										<li>
-											Далее система уведомит Вас о результатах оплаты. На ваш e-mail придет письмо с подтверждением заказа и чек об успешной оплате онлайн
-										</li>
-								</ol>
-								<p>
-									В случае возникновения каких-либо трудностей при оплате онлайн, вы можете позвонить по номеру ХХХХХХХ
-								</p>
+								<div>
+
+								<?php echo $delivery_sc2_text_right;?>
+
+								</div>
 							</div>
 							
 							

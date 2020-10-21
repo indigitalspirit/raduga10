@@ -130,9 +130,20 @@
 							
 				?>
 						</div>
-						
 						<!--=======  End of logo  =======-->
 					</div>
+
+					<?php 
+						//Header options fields
+						$raduga10_header_info_first = get_option('raduga10_header_info_first');
+						$raduga10_header_info_second = get_option('raduga10_header_info_second');
+						$raduga10_header_info_third = get_option('raduga10_header_info_third');
+
+						$raduga10_header_icon_first = get_option('raduga10_header_icon_first');
+						$raduga10_header_icon_second = get_option('raduga10_header_icon_second');
+						$raduga10_header_icon_third = get_option('raduga10_header_icon_third');					
+					?>
+
 					<div class="col-12 col-lg-8 col-md-12 col-sm-12 order-3 order-lg-2">
 						<!--=======  header feature container  =======-->
 						
@@ -141,11 +152,10 @@
 							
 							<div class="single-feature d-flex">
 								<div class="image">
-									<i class="icon ion-md-globe"></i>
+								<?php echo $raduga10_header_icon_first; ?>
 								</div>
 								<div class="content">
-									<h5>Доставим заказ 
-										до подъезда</h5>
+									<h5><?php echo $raduga10_header_info_first; ?></h5>
 									<p></p>
 								</div>
 							</div>
@@ -155,11 +165,10 @@
 							
 							<div class="single-feature d-flex">
 								<div class="image">
-									<i class="icon ion-md-checkmark-circle-outline"></i>
+								<?php echo $raduga10_header_icon_second; ?>
 								</div>
 								<div class="content">
-									<h5>соберем мебель 
-										за вас</h5>
+									<h5><?php echo $raduga10_header_info_second; ?></h5>
 									<!-- <p>Back guarantee under 7 days</p> -->
 								</div>
 							</div>
@@ -169,11 +178,10 @@
 							
 							<div class="single-feature d-flex mb-sm-0">
 								<div class="image">
-									<i class="icon ion-md-notifications-outline"></i>
+								<?php echo $raduga10_header_icon_third; ?>
 								</div>
 								<div class="content">
-									<h5>привезем мебель 
-										под заказ</h5>
+									<h5><?php echo $raduga10_header_info_third; ?></h5>
 									<!-- <p>On every order over $120.00</p> -->
 								</div>
 							</div>
@@ -209,11 +217,11 @@
 						?>
 
 
-<?php	
-		if ( function_exists( 'raduga10_woocommerce_header_cart' ) ) {	
-			raduga10_woocommerce_header_cart();	
-		}	
-	?>	
+						<?php	
+								if ( function_exists( 'raduga10_woocommerce_header_cart' ) ) {	
+									raduga10_woocommerce_header_cart();	
+								}	
+							?>	
 						</div>
 
 					

@@ -24,8 +24,21 @@ get_header();
 
 
 	<!--=============================================
-	=            FAQ page content         =
+	=            GARANTIES page content         =
 	=============================================-->
+
+
+	<?php
+		//Screen 1 ACF fields
+		$garanties_sc1_block_left_1 = get_field("garanties_sc1_block_left_1");
+		$garanties_sc1_block_left_2 = get_field("garanties_sc1_block_left_2");
+		$garanties_sc1_block_right_1 = get_field("garanties_sc1_block_right_1");
+		$garanties_sc1_block_right_2 = get_field("garanties_sc1_block_right_2");
+
+		//Screen 2 ACF fields
+		$garanties_sc2_title_form = get_field("garanties_sc2_title_form");
+		$garanties_sc2_subtitle_form = get_field("garanties_sc2_subtitle_form");
+	?>
 
 
 	<!--=============================================
@@ -35,32 +48,28 @@ get_header();
 	<div class="price-section mb-50">
 		<div class="container">
 			<div class="row mb-30">
-				
-				<!-- About Section Title -->
-				<!-- <div class="about-section-title col-12 mb-50">
-					
-				
-				</div> -->
 
 				<!-- About Feature -->
 				<div class=" col-md-6 col-12 mb-sm-30">
 					<div class="row">
 						
 						<div class="col-12 mb-30">
-							<h3>Возврат товара</h3>
+							<h3>
+								<?php echo $garanties_sc1_block_left_1['garanties_sc1_block_left_title']; ?>
+							</h3>
 
 							<p>
-								Текст о возврате товара
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							<?php echo $garanties_sc1_block_left_1['garanties_sc1_block_left_text']; ?>
 							</p>
 						</div>
 
 						<div class="col-12 mb-30">
-							<h3>Проверка товара при получении</h3>
+							<h3>
+							<?php echo $garanties_sc1_block_left_2['garanties_sc1_block_left_title']; ?>
+							</h3>
 
 							<p>
-								Текст о возврате товара
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							<?php echo $garanties_sc1_block_left_2['garanties_sc1_block_left_text']; ?>
 							</p>
 						</div>
 						
@@ -75,20 +84,22 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 					<div class="row">
 						
 						<div class="col-12 mb-30">
-							<h3>Возврат денежных средств</h3>
+							<h3>
+							<?php echo $garanties_sc1_block_right_1['garanties_sc1_block_right_title']; ?>
+							</h3>
 
 							<p>
-								Текст о возврате товара
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							<?php echo $garanties_sc1_block_right_1['garanties_sc1_block_right_text']; ?>
 							</p>
 						</div>
 
 						<div class="col-12 mb-30">
-							<h3>Гарантийное обслуживание</h3>
+							<h3>
+							<?php echo $garanties_sc1_block_right_2['garanties_sc1_block_right_title']; ?>
+							</h3>
 
 							<p>
-								Текст о возврате товара
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							<?php echo $garanties_sc1_block_right_2['garanties_sc1_block_right_text']; ?>
 							</p>
 						</div>
 						
@@ -117,13 +128,16 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 							<!--=======  contact form content  =======-->
 							
 							<div class="contact-form-content">
-								<h2 class="contact-page-title">Остались вопросы?</h2>
+								<h2 class="contact-page-title">
+									<?php echo $garanties_sc2_title_form; ?>
+								</h2>
 								<p>
-									Напишите нам!
+									<?php echo $garanties_sc2_subtitle_form; ?>
 								</p>
 		
 								<div class="contact-form">
-									<form id="contact-form" action="assets/php/mail.php" method="post">
+								<?php echo do_shortcode('[contact-form-7 id="182" title="Заявка на главной"]'); ?>
+									<!-- <form id="contact-form" action="assets/php/mail.php" method="post">
 										<div class="form-group">
 											<label>Ваше имя: <span class="required">*</span></label>
 											<input type="text" name="customerName" id="customername" required="">
@@ -146,9 +160,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 												Нажимая на кнопку "Отправить", вы соглашаетесь с <a href="#">"Политикой конфиденциальности"</a>
 											</span>
 										</div>
-									</form>
+									</form> -->
 								</div>
-								<p class="form-messege pt-10 pb-10 mt-10 mb-10"></p>
+								<!-- <p class="form-messege pt-10 pb-10 mt-10 mb-10"></p> -->
 							</div>
 							
 							<!--=======  End of contact form content =======-->
@@ -166,7 +180,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 	</div>
 
 
-	<!--=====  End of FAQ page content  ======-->
+	<!--=====  End of GARANTIES page content  ======-->
 
 
 

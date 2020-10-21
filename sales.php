@@ -26,52 +26,51 @@ get_header();
 
 	<!--=====  End of breadcrumb area  ======-->
 
+	<?php
+		//Screen 1 ACF fields
+		$sales_sc1_banners = get_field("sales_sc1_banners");
+
+		//Screen 2 ACF fields
+		$sales_sc2_title_form = get_field("sales_sc2_title_form");
+		$sales_sc2_subtitle_form = get_field("sales_sc2_subtitle_form");
+		?>
+
 
 <!--=============================================
-    =            shop page content         =
+    =            SALES page content         =
     =============================================-->
     
     <div class="shop-page-content mb-50">
 			<div class="container">
-					<div class="row">
-							
-							<div class="col-12 order-1 order-lg-2">
-									<!--=======  slider banner  =======-->
-									<div class="slider-banner home-one-banner banner-bg banner-bg-1 mb-30">
-										<div class="banner-text">
-												<p>Акции</p>
-												<!-- <p class="big-text">Lamps Light Color</p>
-												<p>Only from $209</p> -->
-										</div>
-									</div>
-									
-									<!--=======  End of slider banner  =======-->
-
-
-									
-							</div>
-					</div>
 
 					<div class="row row-10 mb-50">
+
+					<?php 
+						$sale_counter = 0;
+						foreach( $sales_sc1_banners as $sale_banner ) { 
+							$sale_counter = $sale_counter + 1;
+						
+					?>
 				
 						<!-- Banner -->
-						<div class="col-md-6 mb-sm-30">
+						<div class="col-12 mb-sm-30">
 							<div class="single-banner">
-								<a href="#"><img src="assets/images/banners/banner4.jpg" alt="Banner"></a>
+							
+							
+								<a href="<?php echo $sale_banner['sales_sc1_banner_link']; ?>">
+									<img src="<?php echo $sale_banner['sales_sc1_banner_img']; ?>" alt="Акция <?php echo $sale_counter;?>">
+								</a>
 							</div>
 						</div>
-						<div class="col-md-6 col-12 mb-sm-30">
-							<div class="single-banner">
-								<a href="#"><img src="assets/images/banners/banner4.jpg" alt="Banner"></a>
-							</div>
-						</div>
+
+					<?php } ?>
 						
-						
+					
 					</div>
 			</div>
 		</div>
 	
-	<!--=====  End of shop page content  ======-->
+	<!--=====  End of SALES page content  ======-->
 	
 
 
@@ -89,13 +88,15 @@ get_header();
 					<!--=======  contact form content  =======-->
 					
 					<div class="contact-form-content">
-						<h2 class="contact-page-title">Есть вопросы?</h2>
+						<h2 class="contact-page-title">
+							<?php echo $sales_sc2_title_form; ?>
+						</h2>
 						<p>
-							Напишите нам, заполнив форму ниже, или позвоните по тел. ХХХХХХХ
+							<?php echo $sales_sc2_subtitle_form; ?>
 						</p>
 
 						<div class="contact-form">
-							<form id="contact-form" action="assets/php/mail.php" method="post">
+							<!-- <form id="contact-form" action="assets/php/mail.php" method="post">
 								<div class="form-group">
 									<label>Ваше имя: <span class="required">*</span></label>
 									<input type="text" name="customerName" id="customername" required="">
@@ -118,9 +119,10 @@ get_header();
 										Нажимая на кнопку "Отправить", вы соглашаетесь с <a href="#">"Политикой конфиденциальности"</a>
 									</span>
 								</div>
-							</form>
+							</form> -->
+							<?php echo do_shortcode('[contact-form-7 id="182" title="Заявка на главной"]'); ?>
 						</div>
-						<p class="form-messege pt-10 pb-10 mt-10 mb-10"></p>
+						<!-- <p class="form-messege pt-10 pb-10 mt-10 mb-10"></p> -->
 					</div>
 					
 					<!--=======  End of contact form content =======-->
