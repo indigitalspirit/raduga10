@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						?>
 						
-						<div class="about-block">
+						<div class="about-block footer-logo">
 							<div class="image">
 								<?php
 									the_custom_logo();
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						
 							</div>
 
-							<div class="about-text">
+							<div class="about-text footer-about">
 								<p>
 								<?php 
 										
@@ -49,7 +49,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							
 							</div>
 
-							<div class="social-links">
+							<div class="social-links footer-socials">
 								<ul>
 									<li><a href="<?php echo $shop_whatsapp;?>" class="whatsapp"  data-tooltip="WhatsApp"><i class="fa fa-whatsapp"></i></a></li>
 									<li><a href="<?php echo $shop_vk;?>" class="vk"  data-tooltip="vk"><i class="fa fa-vk"></i></a></li>
@@ -96,21 +96,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<div class="widget-block">
 							<h4 class="footer-widget-title mt-sm-20 mb-sm-10">Контакты</h4>
 							
-							<div class="address-block">
+							<div class="address-block footer-contacts">
 								
 
 								<div class="address-text">
 								
 									<ul>
-										<li><p>
-											<!-- <i class="icon ion-md-alarm"></i>  -->
-											<i class="fa fa-phone"></i> 
-											<span class="support-no">
-												<a href="tel:<?php echo $shop_phone;?>"><?php echo $shop_phone;?></a>
-											</span>
-										</p></li>
 										<li>
-											<p>
+											<!-- <p> -->
+												<!-- <i class="icon ion-md-alarm"></i>  -->
+												<i class="fa fa-phone"></i> 
+												<!-- <span class="support-no"> -->
+													<a href="tel:<?php echo $shop_phone;?>"><?php echo $shop_phone;?></a>
+												<!-- </span> -->
+											</p>
+										</li>
+										<li>
+											<!-- <p> -->
 												<i class="icon ion-md-alarm"></i> 
 												<!-- <i class="fa fa-phone"></i>  -->
 												<span class="support-no">
@@ -119,21 +121,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 											</p>
 										</li>
 										<li>
-											<p>
+											<!-- <p> -->
 												<!-- <i class="icon ion-md-alarm"></i>  -->
 												<i class="fa fa-map-marker" aria-hidden="true"></i>
-												<span class="support-no">
+												<!-- <span class="support-no"> -->
 												<a href="/contacts"><?php echo $shop_address;?></a>
-												</span>
+												<!-- </span> -->
 											</p>
 										</li>
-										<li><p>
-											<!-- <i class="icon ion-md-alarm"></i>  -->
-											<i class="fa fa-envelope" aria-hidden="true"></i>
-											<span class="support-no">
-												<a href="mailto:<?php echo $shop_mail;?>"><?php echo $shop_mail;?></a>
-											</span>
-										</p></li>
+										<li>
+											<!-- <p> -->
+												<!-- <i class="icon ion-md-alarm"></i>  -->
+												<i class="fa fa-envelope" aria-hidden="true"></i>
+												<!-- <span class="support-no"> -->
+													<a href="mailto:<?php echo $shop_mail;?>"><?php echo $shop_mail;?></a>
+												<!-- </span> -->
+											</p>
+										</li>
 									</ul>
 								</div>
 

@@ -114,21 +114,34 @@ get_header();
 	<!--=====  End of CONTACTS page content  ======-->
 
 
+	<div class="border-section mb-50">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12">
+					<div class="border-container">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 	<!--=============================================
 	=           lead form 
 	=============================================-->
 	
 	<div class="lead-contacts mb-50">
 		<div class="container">
-			<div class="row">
-				<div class="col-12">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-8">
 					<!--=======  contact form content  =======-->
 					
 					<div class="contact-form-content">
 						<h2 class="contact-page-title">
 						<?php echo $contacts_sc2_title_form;?>
 						</h2>
-						<p>
+						<p class="contact-page-subtitle">
 						<?php echo $contacts_sc2_subtitle_form;?>
 						</p>
 

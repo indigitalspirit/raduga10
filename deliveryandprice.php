@@ -95,7 +95,7 @@ get_header();
 									<?php echo $delivery_sc2_subtitle_form; ?>
 								</p>
 		
-								<div class="contact-form">
+								<div class="contact-form contact-form__delivery">
 									<?php echo do_shortcode('[contact-form-7 id="182" title="Заявка на главной"]'); ?>
 									<!-- <form id="contact-form" action="assets/php/mail.php" method="post">
 										<div class="form-group">

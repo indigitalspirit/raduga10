@@ -41,8 +41,8 @@ get_header();
 
 	<div class="page-section mb-50">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-8">
 					<div class="faq-wrapper">
 
 						<div id="accordion">
@@ -114,7 +114,17 @@ get_header();
 	<!--=====  End of FAQ page content  ======-->
 
 
+	<div class="border-section mb-50">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12">
+					<div class="border-container">
 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!--=============================================
 	=           lead form 
@@ -122,8 +132,8 @@ get_header();
 	
 	<div class="lead-contacts mb-50">
 		<div class="container">
-			<div class="row">
-				<div class="col-12">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-8">
 					<!--=======  contact form content  =======-->
 					
 					<div class="contact-form-content">

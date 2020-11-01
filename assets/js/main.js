@@ -260,8 +260,8 @@
 	mainMenuNav.meanmenu({
 		meanScreenWidth: '991',
 		meanMenuContainer: '.mobile-menu',
-		meanMenuClose: '<span class="mean-menu-text">MENU</span> <span class="menu-close"></span>',
-		meanMenuOpen: '<span class="mean-menu-text">MENU</span> <span class="menu-bar"></span>',
+		meanMenuClose: '<span class="mean-menu-text">Меню</span> <span class="menu-close"></span>',
+		meanMenuOpen: '<span class="mean-menu-text">Меню</span> <span class="menu-bar"></span>',
 		meanRevealPosition: 'right',
 		meanMenuCloseSize: '0',
 	});
@@ -292,8 +292,12 @@
 
 	$('.pro-qty').append('<a href="#" class="inc qty-btn">+</a>');
 	$('.pro-qty').append('<a href="#" class= "dec qty-btn">-</a>');
+
+
 	$('.qty-btn').on('click', function (e) {
 		e.preventDefault();
+		console.log('button click');
+
 		var $button = $(this);
 		var oldValue = $button.parent().find('input').val();
 		if ($button.hasClass('inc')) {
@@ -308,6 +312,8 @@
 		}
 		$button.parent().find('input').val(newVal);
 	});
+
+	
 
 
 	/*----------   Nice Select  ----------*/
@@ -634,58 +640,58 @@
 	
 	/*----------  blog post slider  ----------*/
 	
-	$('.blog-post-slider-container').each(function () {
-		var $this = $(this);
-		var $row = $this.attr("data-row") ? parseInt($this.attr("data-row"), 10) : 1;
-		$this.slick({
-			infinite: true,
-			arrows: true,
-			dots: false,
-			slidesToShow: 3,
-			slidesToScroll: 1,
-			autoplay: false,
-			rows: $row,
-			prevArrow: '<button class="slick-prev"><i class="fa fa-angle-left"></i></button>',
-			nextArrow: '<button class="slick-next"><i class="fa fa-angle-right"></i></button>',
-			responsive: [{
-				breakpoint: 1499,
-				settings: {
-					slidesToShow: 3,
-				}
-			},
-			{
-				breakpoint: 1199,
-				settings: {
-					slidesToShow: 3,
-				}
-			},
-			{
-				breakpoint: 991,
-				settings: {
-					slidesToShow: 2,
-				}
-			},
-			{
-				breakpoint: 767,
-				settings: {
-					slidesToShow: 1,
-				}
-			},
-			{
-				breakpoint: 575,
-				settings: {
-					slidesToShow: 1,
-				}
-			},
-			{
-				breakpoint: 479,
-				settings: {
-					slidesToShow: 1,
-				}
-			}
-		]
-		});
-	});
+	// $('.blog-post-slider-container').each(function () {
+	// 	var $this = $(this);
+	// 	var $row = $this.attr("data-row") ? parseInt($this.attr("data-row"), 10) : 1;
+	// 	$this.slick({
+	// 		infinite: true,
+	// 		arrows: true,
+	// 		dots: false,
+	// 		slidesToShow: 3,
+	// 		slidesToScroll: 1,
+	// 		autoplay: false,
+	// 		rows: $row,
+	// 		prevArrow: '<button class="slick-prev"><i class="fa fa-angle-left"></i></button>',
+	// 		nextArrow: '<button class="slick-next"><i class="fa fa-angle-right"></i></button>',
+	// 		responsive: [{
+	// 			breakpoint: 1499,
+	// 			settings: {
+	// 				slidesToShow: 3,
+	// 			}
+	// 		},
+	// 		{
+	// 			breakpoint: 1199,
+	// 			settings: {
+	// 				slidesToShow: 3,
+	// 			}
+	// 		},
+	// 		{
+	// 			breakpoint: 991,
+	// 			settings: {
+	// 				slidesToShow: 2,
+	// 			}
+	// 		},
+	// 		{
+	// 			breakpoint: 767,
+	// 			settings: {
+	// 				slidesToShow: 1,
+	// 			}
+	// 		},
+	// 		{
+	// 			breakpoint: 575,
+	// 			settings: {
+	// 				slidesToShow: 1,
+	// 			}
+	// 		},
+	// 		{
+	// 			breakpoint: 479,
+	// 			settings: {
+	// 				slidesToShow: 1,
+	// 			}
+	// 		}
+	// 	]
+	// 	});
+	// });
 
 
 	

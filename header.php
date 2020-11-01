@@ -39,7 +39,7 @@
 		<div class="header-top pt-15 pb-15">
 			<div class="container">
 				<div class="row">
-					<div class="col-12 col-lg-10">
+					<div class="col-12 col-lg-9">
 						<div class="header-top-text header-top-text__left text-center text-lg-left mb-0 mb-md-15 mb-sm-15">
 								<p>
 									<!-- <i class="icon ion-md-alarm"></i>  -->
@@ -82,24 +82,44 @@
 						</div>
 					</div>
 
-					<div class="col-12 col-lg-2">
-						<div class="header-top-text header-top-text__right text-center text-lg-right mb-0 mb-md-15 mb-sm-15">
-							<p>
-							<?php 
-										$shop_whatsapp = get_option( 'raduga10_whatsapp_field');
-										$shop_vk = get_option( 'raduga10_vk_field');
-									?>
-								<!-- <i class="icon ion-md-alarm"></i>  -->
-								<a href="<?php echo $shop_whatsapp;?>" target="_blank">
-									<i class="fa fa-whatsapp"></i>
-								</a>
-								<a href="<?php echo $shop_vk;?>" target="_blank">
-									<i class="fa fa-vk"></i> 
-								</a>
-								
-								
-							</p>
-					</div>
+					<div class="col-12 col-lg-3">
+						<div class="header-top-dropdown d-flex justify-content-center justify-content-lg-end">
+							<div class="header-top-text header-top-text__left text-center text-lg-right mb-0 mb-md-15 mb-sm-15">
+								<div class="single-dropdown">
+									<a href="/my-account/" id="changeAccount">
+										<span id="accountMenuName">
+											Мой аккаунт | Войти
+											<!-- <i class="fa fa-angle-down"></i> -->
+										</span>
+									</a>
+									<!-- <div class="language-currency-list hidden" id="accountList">
+										<ul>
+											<li><a href="cart.html">Cart</a></li>
+											<li><a href="checkout.html">Checkout</a></li>
+											<li><a href="my-account.html">My Account</a></li>
+											<li><a href="login-register.html">Login</a></li>
+										</ul>
+									</div> -->
+								</div>
+							</div>
+							<div class="header-top-text text-center text-lg-right mb-0 mb-md-15 mb-sm-15">
+								<p class="header-socials">
+								<?php 
+											$shop_whatsapp = get_option( 'raduga10_whatsapp_field');
+											$shop_vk = get_option( 'raduga10_vk_field');
+										?>
+									<!-- <i class="icon ion-md-alarm"></i>  -->
+									<a href="<?php echo $shop_whatsapp;?>" class="header-socials__wp" target="_blank">
+										<i class="fa fa-whatsapp"></i>
+									</a>
+									<a href="<?php echo $shop_vk;?>" class="header-socials__vk" target="_blank">
+										<i class="fa fa-vk"></i> 
+									</a>
+									
+									
+								</p>
+							</div>
+						</div>
 					</div>
 
 		
@@ -200,23 +220,6 @@
 						
 						<div class="minicart-section">
 							
-							<?php
-							// if ( function_exists( 'raduga10_woocommerce_cart_link' ) ) {
-							// 	raduga10_woocommerce_cart_link();
-							// }
-							
-							// $instance = array(	
-							// 	'title' => '',	
-							// );	
-							// the_widget( 'WC_Widget_Cart', $instance );
-
-							// if ( function_exists( 'raduga10_woocommerce_header_cart' ) ) {
-							// 	raduga10_woocommerce_header_cart();
-							// }
-
-						?>
-
-
 						<?php	
 								if ( function_exists( 'raduga10_woocommerce_header_cart' ) ) {	
 									raduga10_woocommerce_header_cart();	

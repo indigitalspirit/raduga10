@@ -42,23 +42,28 @@ if ( ! function_exists( 'raduga10_woocommerce_cart_link' ) ) {
 	 */	
 	function raduga10_woocommerce_cart_link() {	
 		?>	
-		<!-- <span class="image"><a href="<?php echo esc_url( wc_get_cart_url() ); ?>"><i class="icon ion-md-cart"></i></a></span> -->
+		<span class="image"><a href="<?php echo esc_url( wc_get_cart_url() ); ?>"><i class="icon ion-md-cart"></i></a></span>
 		
-		<a class="cart-contents" id="cart-icon" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'raduga10' ); ?>">	
+		<a class="cart-contents" id="cart-icon" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="Посмотреть корзину">	
 			<?php	
-			$item_count_text = sprintf(	
-				/* translators: number of items in the mini cart. */	
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'raduga10' ),	
-				WC()->cart->get_cart_contents_count()	
-			);	
-			?>	
-			<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo esc_html( $item_count_text ); ?></span>	
+				$item_count_text = sprintf(	
+					/* translators: number of items in the mini cart. */	
+					_n( '%d товар', '%d товаров', WC()->cart->get_cart_contents_count(), 'raduga10' ),	
+					WC()->cart->get_cart_contents_count()	
+				);	
 			
-		</a>	
-		<span id="cart-icon">
+			?>	
+		
+			<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count">
+				<?php echo esc_html( $item_count_text );//WC()->cart->get_cart_contents_count();  ?>
+			</span>	
+			
+		
+		</a>
+		
+		<span id="cart-dropdown">
 			<i class="fa fa-angle-down"></i>
 		</span>
-		
 
 		
 		<?php	

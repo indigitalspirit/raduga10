@@ -56,9 +56,13 @@ get_header();
 						<div class="col-12 mb-sm-30">
 							<div class="single-banner">
 							
-							
-								<a href="<?php echo $sale_banner['sales_sc1_banner_link']; ?>">
+								<?php if( $sale_banner['sales_sc1_banner_link'] != '' ): ?>
+									<a href="<?php echo $sale_banner['sales_sc1_banner_link']; ?>">
+								<?php endif; ?>
+								
+								<?php if( $sale_banner['sales_sc1_banner_img'] != '' ): ?>
 									<img src="<?php echo $sale_banner['sales_sc1_banner_img']; ?>" alt="Акция <?php echo $sale_counter;?>">
+								<?php endif; ?>
 								</a>
 							</div>
 						</div>
@@ -74,6 +78,17 @@ get_header();
 	
 
 
+	<div class="border-section mb-50">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12">
+					<div class="border-container">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 
@@ -83,15 +98,15 @@ get_header();
 	
 	<div class="lead-contacts mb-50">
 		<div class="container">
-			<div class="row">
-				<div class="col-12">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-8">
 					<!--=======  contact form content  =======-->
 					
 					<div class="contact-form-content">
 						<h2 class="contact-page-title">
 							<?php echo $sales_sc2_title_form; ?>
 						</h2>
-						<p>
+						<p class="contact-page-subtitle">
 							<?php echo $sales_sc2_subtitle_form; ?>
 						</p>
 

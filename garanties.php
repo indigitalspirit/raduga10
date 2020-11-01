@@ -114,6 +114,18 @@ get_header();
 		</div>
 	</div>
 
+	<div class="border-section mb-50">
+		<!-- <div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12"> -->
+					<div class="border-container">
+
+					</div>
+				<!-- </div>
+			</div>
+		</div> -->
+	</div>
+
 
 	<div class="page-section mb-50">
 		<div class="container">
@@ -123,15 +135,15 @@ get_header();
 					<!--=======  contact form content  =======-->
 					
 
-					<div class="row">
-						<div class="col-12">
+					<div class="row justify-content-center">
+						<div class="col-12 col-md-8">
 							<!--=======  contact form content  =======-->
 							
-							<div class="contact-form-content">
+							<div class="contact-form-content contact-form__contacts">
 								<h2 class="contact-page-title">
 									<?php echo $garanties_sc2_title_form; ?>
 								</h2>
-								<p>
+								<p class="contact-page-subtitle">
 									<?php echo $garanties_sc2_subtitle_form; ?>
 								</p>
 		

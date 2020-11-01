@@ -5,6 +5,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <!--=============================================
+	=            search overlay         =
+	=============================================-->
+	
+	<div class="search-overlay" id="search-overlay">
+		<a href="#" class="search-overlay-close" id="search-overlay-close"><i class="fa fa-times"></i></a>
+		<div class="search-box">
+			<?php get_search_form(); ?>
+			<!-- <input type="search" placeholder="Search entire store here">
+			<button><i class="icon ion-md-search"></i></button> -->
+		</div>
+	</div>
+		
+	<!--=====  End of search overlay  ======-->
+
+
+
+<!--=============================================
 	=            Quick view modal         =
 	=============================================-->
 	
@@ -19,124 +36,61 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class="modal-body">
 					<div class="row">
 						<div class="col-lg-5 col-md-6 col-xs-12 mb-xxs-25 mb-xs-25 mb-sm-25">
-							<!-- single product tabstyle one image gallery -->
 							<div class="product-image-slider fl-product-image-slider fl3-product-image-slider quickview-product-image-slider">
-								<!--product large image start -->
-								<div class="tab-content product-large-image-list fl-product-large-image-list fl3-product-large-image-list quickview-product-large-image-list" id="myTabContent2">
-									<div class="tab-pane fade show active" id="single-slide-1-q" role="tabpanel" aria-labelledby="single-slide-tab-1-q">
-										<!--Single Product Image Start-->
-										<div class="single-product-img img-full">
-<!-- 											<img src="assets/images/single-product-slider/01.jpg" class="img-fluid" alt=""> -->
-										</div>
-										<!--Single Product Image End-->
-									</div>
-									<div class="tab-pane fade" id="single-slide-2-q" role="tabpanel" aria-labelledby="single-slide-tab-2-q">
-										<!--Single Product Image Start-->
-										<div class="single-product-img img-full">
-<!-- 											<img src="assets/images/single-product-slider/02.jpg" class="img-fluid" alt=""> -->
-										</div>
-										<!--Single Product Image End-->
-									</div>
-									<div class="tab-pane fade" id="single-slide-3-q" role="tabpanel" aria-labelledby="single-slide-tab-3-q">
-										<!--Single Product Image Start-->
-										<div class="single-product-img img-full">
-<!-- 											<img src="assets/images/single-product-slider/03.jpg" class="img-fluid" alt=""> -->
-										</div>
-										<!--Single Product Image End-->
-									</div>
-									<div class="tab-pane fade" id="single-slide-4-q" role="tabpanel" aria-labelledby="single-slide-tab-4-q">
-										<!--Single Product Image Start-->
-										<div class="single-product-img img-full">
-<!-- 											<img src="assets/images/single-product-slider/04.jpg" class="img-fluid" alt=""> -->
-										</div>
-										<!--Single Product Image End-->
-									</div>
-									<div class="tab-pane fade" id="single-slide-5-q" role="tabpanel" aria-labelledby="single-slide-tab-5-q">
-										<!--Single Product Image Start-->
-										<div class="single-product-img img-full">
-<!-- 											<img src="assets/images/single-product-slider/05.jpg" class="img-fluid" alt=""> -->
-										</div>
-										<!--Single Product Image End-->
-									</div>
-								</div>
-								<!--product large image End-->
-		
-								<!--product small image slider Start-->
-								<div class="product-small-image-list fl-product-small-image-list fl3-product-small-image-list quickview-product-small-image-list"> 
-									<div class="nav small-image-slider fl3-small-image-slider" role="tablist">
-										<div class="single-small-image img-full">
-											<a data-toggle="tab" id="single-slide-tab-1-q" href="#single-slide-1-q">
-<!-- 												<img src="assets/images/single-product-slider/01.jpg"
-												class="img-fluid" alt=""> -->
-											</a>
-										</div>
-										<div class="single-small-image img-full">
-											<a data-toggle="tab" id="single-slide-tab-2-q" href="#single-slide-2-q">
-<!-- 												<img src="assets/images/single-product-slider/02.jpg"
-												class="img-fluid" alt=""> -->
-											</a>
-										</div>
-										<div class="single-small-image img-full">
-											<a data-toggle="tab" id="single-slide-tab-3-q" href="#single-slide-3-q">
-<!-- 												<img src="assets/images/single-product-slider/03.jpg"
-												class="img-fluid" alt=""> -->
-											</a>
-										</div>
-										<div class="single-small-image img-full">
-											<a data-toggle="tab" id="single-slide-tab-4-q" href="#single-slide-4-q">
-<!-- 												<img src="assets/images/single-product-slider/04.jpg"
-												alt=""> -->
-											</a>
-										</div>
-										<div class="single-small-image img-full">
-											<a data-toggle="tab" id="single-slide-tab-5-q" href="#single-slide-5-q">
-<!-- 												<img src="assets/images/single-product-slider/05.jpg"
-												alt=""> -->
-											</a>
-										</div>
-									</div>
-								</div>
-								<!--product small image slider End-->
+								<?php
+								// $attachment_id = get_post_thumbnail_id( $product->get_id() );
+								// $product_thumb = wp_get_attachment_image_url( $attachment_id, 'shop_single');
+								?>
+								<img src="<?php //echo $product_thumb; ?>" alt=" " class="img-responsive" />
 							</div>
 							<!-- end of single product tabstyle one image gallery -->
 						</div>
 						<div class="col-lg-7 col-md-6 col-xs-12">
 							<!-- product quick view description -->
 							<div class="product-feature-details">
-								<h2 class="product-title mb-15">Kaoreet lobortis sagittis</h2>
-
-								<h2 class="product-price mb-15"> 
-									<span class="main-price discounted">$12.90</span> 
-									<span class="discounted-price"> $10.00</span>
-									<span class="discount-percentage">Save 8%</span>
+								<h2 class="product-title mb-15"><?php //echo $product->get_name(); ?></h2>
+								<?php 
+									// $regular_price = $product->get_regular_price();
+									// $price = $product->get_price();
+									// $sale_price = $product->get_sale_price();
+									
+								?>
+								<h2 class="product-price mb-15">
+									
+							
 								</h2>
 
-								<p class="product-description mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>
-								
-
+								<p class="product-description mb-20">
+									<?php //echo $product->get_description(); ?>
+								</p>
 								<div class="cart-buttons mb-20">
 									<div class="pro-qty mr-10">
 										<input type="text" value="1">
+										<a href="#" class="inc qty-btn">+</a>
+										<a href="#" class="dec qty-btn">-</a>
 									</div>
-									<div class="add-to-cart-btn">
-										<a href="#" class="fl-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
-									</div>
-								</div>
 
-						
-								<div class="social-share-buttons">
-									<h3>share this product</h3>
-									<ul>
-										<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-										<li><a class="pinterest" href="#"><i class="fa fa-pinterest"></i></a></li>
-									</ul>
+									<a href="#" data-quantity="1" class="button  add_to_cart_button ajax_add_to_cart w3ls-cart fl-btn"><i class="fa fa-shopping-cart"></i>Добавить в корзину</a>
+
+									<!-- <a href="https://raduga10.anastasia-pavlova.com/product/hoodie/" data-quantity="1" class="button product_type_variable add_to_cart_button ajax_add_to_cart w3ls-cart fl-btn" data-product_id="58" data-product_sku="woo-hoodie" aria-label="Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."><i class="fa fa-shopping-cart"></i>Подробнее</a> -->
+
+										<?php
+										// printf( '<a href="%s" data-quantity="%s" class="%s" %s><i class="fa fa-shopping-cart"></i>%s</a>',
+										// 	esc_url( $product->add_to_cart_url() ),
+										// 	esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
+										// 	'button product_type_'. $product->get_type() .' add_to_cart_button ajax_add_to_cart w3ls-cart fl-btn',
+										// 	'data-product_id="' . $product->get_id() . '" data-product_sku="' . $product->get_sku() . '" aria-label="'. $product->get_description() .'"',
+										// 	esc_html( $product->add_to_cart_text() )
+										// )
+										?>
+
 								</div>
 							</div>
-							<!-- end of product quick view description -->
 						</div>
 					</div>
+				</div>
+				<div class="modal-footer">
+					
 				</div>
 			</div>
 

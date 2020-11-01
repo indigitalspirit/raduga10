@@ -22,7 +22,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 do_action( 'woocommerce_before_account_navigation' );
 ?>
 
-<nav class="woocommerce-MyAccount-navigation">
+<div class="row">
+	<div class="col-lg-3 col-12">
+		<div class="myaccount-tab-menu nav" role="tablist">
+			
+				<?php 
+					$nav_counter = 0;
+					foreach ( wc_get_account_menu_items() as $endpoint => $label ) :
+						$nav_counter = $nav_counter + 1;
+						
+				?>
+
+					
+					<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>" <?php //if( $nav_counter == 1 ){echo 'class="active"';} ?> >
+						<i class="fa fa-dashboard"></i>
+						<?php echo esc_html( $label ); ?>
+					</a>
+
+				<?php 
+					endforeach; 
+				?>
+
+		</div>
+	</div>
+
+
+<!-- <nav class="woocommerce-MyAccount-navigation">
 	<ul>
 		<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
 			<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
@@ -30,6 +55,6 @@ do_action( 'woocommerce_before_account_navigation' );
 			</li>
 		<?php endforeach; ?>
 	</ul>
-</nav>
+</nav> -->
 
 <?php do_action( 'woocommerce_after_account_navigation' ); ?>

@@ -35,3 +35,7 @@ function raduga10_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'raduga10_pingback_header' );
+
+
+/*** Remove Contact Form 7 spacing */
+add_filter( 'wpcf7_autop_or_not', '__return_false' );

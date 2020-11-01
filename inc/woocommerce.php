@@ -81,7 +81,7 @@ if ( ! function_exists( 'raduga10_woocommerce_wrapper_before' ) ) {
 	 */
 	function raduga10_woocommerce_wrapper_before() {
 		?>
-			<main id="primary" class="site-main">
+			<main id="primary" class="site-main my-woo">
 		<?php
 	}
 }

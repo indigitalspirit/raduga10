@@ -83,6 +83,17 @@ get_header();
 	<!--=====  End of SERTIFICATES page content  ======-->
 
 
+	<div class="border-section mb-50">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12">
+					<div class="border-container">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 	<!--=============================================
@@ -91,8 +102,8 @@ get_header();
 	
 	<div class="lead-contacts mb-50">
 		<div class="container">
-			<div class="row">
-				<div class="col-12">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-8">
 					<!--=======  contact form content  =======-->
 					
 					<div class="contact-form-content">
