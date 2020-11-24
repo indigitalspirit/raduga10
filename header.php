@@ -217,6 +217,8 @@
 					</div>
 					<div class=" col-6 col-lg-2 col-md-6 col-sm-6 order-2 order-lg-3">
 						<!--=======  cart icon  =======-->
+
+						<!-- <div class="header-cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></div> -->
 						
 						<div class="minicart-section">
 							

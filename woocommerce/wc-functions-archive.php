@@ -255,7 +255,8 @@ function estore_loop_product_div_image_close(){
 <?
 	else:
 ?>
-	<img src="http://raduga10.ru/wp-content/uploads/woocommerce-placeholder-300x300.png" alt="Ожидается изображения товара" class="<?php echo $product->get_title();?>">
+
+	<img src="https://raduga10.ru/wp-content/uploads/woocommerce-placeholder-300x300.png" alt="Ожидается изображения товара" class="<?php echo $product->get_title();?>">
 												
 <?php
 	endif; 

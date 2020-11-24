@@ -311,6 +311,8 @@
 			}
 		}
 		$button.parent().find('input').val(newVal);
+		$button.parent().find('input').attr("value", newVal);
+		$button.parent().parent().find('.add_to_cart_button').attr("data-quantity", newVal);
 	});
 
 	

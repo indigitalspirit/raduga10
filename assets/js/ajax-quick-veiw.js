@@ -21,6 +21,71 @@ jQuery(document).ready(function ($) {
 		}
 			console.log(out);
 	}
+
+	function insertProductData(productObject) {
+		$("#quick-view-modal-container .modal-body img.img-responsive").attr("src", productObject.product_thumb);
+		$("#quick-view-modal-container .modal-body img.img-responsive").attr("alt", productObject.product_name);
+
+		$('#quick-view-modal-container .modal-body h2.product-title').html(productObject.product_name);
+
+
+		if(productObject.sale_price) {
+			$('#quick-view-modal-container .modal-body .product-price').append('<span class="main-price discounted">'+productObject.regular_price+' р.</span>');	
+			
+			$('#quick-view-modal-container .modal-body .product-price').append('<span class="discounted-price">'+productObject.sale_price+' р.</span>');
+
+			$('#quick-view-modal-container .modal-body .product-price').append('<span class="discount-percentage">Распродажа!</span>');
+		}
+
+		else {
+			$('#quick-view-modal-container .modal-body .product-price').append('<span class="discounted-price">'+productObject.price+' р.</span>');
+		}
+
+
+		$('#quick-view-modal-container .modal-body .product-description').append(productObject.product_descr);
+
+		$("#quick-view-modal-container .modal-body a.add_to_cart_button").attr("href", productObject.product_add_to_cart);
+
+		$("#quick-view-modal-container .modal-body a.add_to_cart_button").attr("class", 'button add_to_cart_button ajax_add_to_cart w3ls-cart fl-btn '+productObject.cart_button_class);
+
+		$("#quick-view-modal-container .modal-body a.add_to_cart_button").attr("data_product_id", productObject.data_product_id);
+
+		$("#quick-view-modal-container .modal-body a.add_to_cart_button").attr("data_product_sku", productObject.data_product_sku);
+
+		$("#quick-view-modal-container .modal-body a.add_to_cart_button").attr("aria-label", productObject.data_product_label);
+
+
+	}
+
+	function cleanProductData() {
+		$("#quick-view-modal-container .modal-body img.img-responsive").attr("src", 'https://raduga10.ru/wp-content/uploads/woocommerce-placeholder-300x300.png');
+		$("#quick-view-modal-container .modal-body img.img-responsive").attr("alt", '');
+
+		$('#quick-view-modal-container .modal-body h2.product-title').html('');
+
+
+		
+			$('#quick-view-modal-container .modal-body .product-price span.main-price').remove();	
+			
+			$('#quick-view-modal-container .modal-body .product-price span.discounted-price').remove();
+			$('#quick-view-modal-container .modal-body .product-price span.discount-percentage').remove();
+
+
+
+		$('#quick-view-modal-container .modal-body .product-description').append('');
+
+		$("#quick-view-modal-container .modal-body a.add_to_cart_button").attr("href", "#");
+
+		$("#quick-view-modal-container .modal-body a.add_to_cart_button").attr("class", 'button add_to_cart_button ajax_add_to_cart w3ls-cart fl-btn ');
+
+		$("#quick-view-modal-container .modal-body a.add_to_cart_button").attr("data_product_id", "");
+
+		$("#quick-view-modal-container .modal-body a.add_to_cart_button").attr("data_product_sku", "");
+
+		$("#quick-view-modal-container .modal-body a.add_to_cart_button").attr("aria-label", "");
+
+
+	}
 	
 			$.ajax({
 					url:ajax_quick.url,
@@ -29,65 +94,25 @@ jQuery(document).ready(function ($) {
 					dataType: 'json',
 					beforeSend:function(xhr){
 						 $('#quick-view-modal-container .modal-body').css('opacity', '.1');
+
+						 cleanProductData();
+
 					},
 					success:function(data){
 						console.log("success data", data.sale_price);
+						console.log('data recieved: ');
 						objDump(data);
+
+
+						insertProductData(data);
+
+						$(document.body).trigger('wc_fragment_refresh');
+						
 
 						$('#quick-view-modal-container .modal-body').css('opacity', '1');
 
-						// $('#quick-view-modal-container .modal-body').html(data.product);
-				
-						 $("#quick-view-modal-container .modal-body img.img-responsive").attr("src", data.product_thumb);
-						$("#quick-view-modal-container .modal-body img.img-responsive").attr("alt", data.product_name);
-			
-						$('#quick-view-modal-container .modal-body h2.product-title').html(data.product_name);
-
-
-
-						//$('#quick-view-modal-container .modal-body .main-price').html(data.regular_price);
-						//$('#quick-view-modal-container .modal-body .discounted-price').html(data.sale_price);
-
-		
-
-						if(data.sale_price) {
-							$('#quick-view-modal-container .modal-body .product-price').append('<span class="main-price discounted">'+data.regular_price+' р.</span>');	
-							
-							$('#quick-view-modal-container .modal-body .product-price').append('<span class="discounted-price">'+data.sale_price+' р.</span>');
-
-							$('#quick-view-modal-container .modal-body .product-price').append('<span class="discount-percentage">Распродажа!</span>');
-						}
-
-						else {
-							$('#quick-view-modal-container .modal-body .product-price').append('<span class="discounted-price">'+data.price+' р.</span>');
-						}
-
-
-						$('#quick-view-modal-container .modal-body .product-description').append(data.product_descr);
-			
-			//$('#quick-view-modal-container .modal-body .product-image-slider').append(data.product_thumb);
-
-						//$('#quick-view-modal-container .modal-body .product-image-slider').append('<img src="'+data.product_thumb+'" alt=" " class="'+data.product_name+'" />');
-						//
-						
-						$("#quick-view-modal-container .modal-body a.add_to_cart_button").attr("href", data.product_add_to_cart);
-						$("#quick-view-modal-container .modal-body a.add_to_cart_button").attr("class", 'button add_to_cart_button ajax_add_to_cart w3ls-cart fl-btn '+data.cart_button_class);
-						$("#quick-view-modal-container .modal-body a.add_to_cart_button").attr("data_product_id", data.data_product_id);
-						$("#quick-view-modal-container .modal-body a.add_to_cart_button").attr("data_product_sku", data.data_product_sku);
-						$("#quick-view-modal-container .modal-body a.add_to_cart_button").attr("aria-label", data.data_product_label);
-
-						
-						
 					
-
-						
-
-					
-					///	console.log(data.attachment_id);
-										//console.log(jQuery.parseJSON(data));
-						//var obj = jQuery.parseJSON(result);
-										//$('#quick-view-modal-container .modal-body').html(data.id);
-						$('#quick-view-modal-container .modal-body').html(data.product);
+						//$('#quick-view-modal-container .modal-body').html(data.product);
 
 					},
 					error: function(XMLHttpRequest, textStatus, errorThrown) { 

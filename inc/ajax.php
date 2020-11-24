@@ -31,7 +31,7 @@ function estore_quick_view_product_callback(){
 		$data['product_thumb'] = $product_thumb;
 	}
 	else {
-		$data['product_thumb'] = 'http://raduga10.ru/wp-content/uploads/woocommerce-placeholder-300x300.png';
+		$data['product_thumb'] = 'https://raduga10.ru/wp-content/uploads/woocommerce-placeholder-300x300.png';
 	}
 	
 	
