@@ -1634,6 +1634,72 @@ padding: 20px 0;
 
 
 
+
+.up-sell-products-slider, .related-products-slider {
+
+}
+
+.up-sell-products-slider .slick-arrow,
+.related-products-slider .slick-arrow {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background: none;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 46px;
+    text-align: center;
+    border: 2px solid #ebebeb;
+    border-radius: 50%;
+    z-index: 9;
+    color: #ebebeb;
+    background-color: #ffffff;
+    /* visibility: hidden; */
+    /* opacity: 0; */
+}
+
+.up-sell-products-slider .slick-arrow:hover,
+.related-products-slider .slick-arrow:hover {
+    background-color: #9acf6a;
+    color: #ffffff;
+    border-color: #9acf6a;
+
+}
+
+.up-sell-products-slider .slick-arrow.slick-next,
+.related-products-slider .slick-arrow.slick-next {
+    right: 0;
+    margin-right: -25px;
+} 
+
+.up-sell-products-slider .slick-arrow.slick-prev,
+.related-products-slider .slick-arrow.slick-prev {
+    margin-left: -25px;
+}
+
+.up-sell-products-slider  .products,
+.related-products-slider  .products {
+    border: 1px solid #ebebeb;
+    border-top: none;
+}
+
+.up-sell-products-slider  .products .fl-product,
+.related-products-slider  .products .fl-product {
+    margin: 30px 0;
+    padding: 0 5px; 
+}
+
+.up-sell-products-slider .section-title,
+.related-products-slider .section-title {
+    border-bottom: 1px solid #ebebeb;
+}
+
+
+
+
 /*** ACCOUNT PAGE ***/
 
 .woocommerce-account .woocommerce {

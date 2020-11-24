@@ -22,22 +22,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( $upsells ) : ?>
 
 <!--=============================================
-    =            related product slider         =
+    =            up-sell product slider         =
     =============================================-->
     
-    <div class="related-product-slider-area mb-50">
-        <div class="container">
+<div class="related-product-slider-area mb-50 up-sell-products-slider">
+	<div class="container">
             
-						
 
-<!-- 	<section class="up-sells upsells products"> -->
+		<!-- 	<section class="up-sells upsells products"> -->
 		<?php
 		$heading = apply_filters( 'woocommerce_product_upsells_products_heading', __( 'You may also like&hellip;', 'woocommerce' ) );
 
 		if ( $heading ) :
 			?>
 			<div class="row">
-                <div class="col-lg-12">
+        <div class="col-lg-12">
 					<!--=======  section title  =======-->
 						
 					<div class="section-title">
@@ -46,28 +45,45 @@ if ( $upsells ) : ?>
 					
 					<!--=======  End of section title  =======-->
 				</div>
-            </div>
+			</div>
+			
 			
 		<?php endif; ?>
 
-		<?php woocommerce_product_loop_start(); ?>
+		<div class="row">
+			<div class="col-lg-12">
+					<!--=======  tab product slider  =======-->
 
-			<?php foreach ( $upsells as $upsell ) : ?>
+					<button class="slick-prev slick-arrow" style=""><i class="fa fa-angle-left"></i></button>
 
-				<?php
-				$post_object = get_post( $upsell->get_id() );
+					<?php woocommerce_product_loop_start(); ?>
 
-				setup_postdata( $GLOBALS['post'] =& $post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
+						<?php foreach ( $upsells as $upsell ) : ?>
 
-				wc_get_template_part( 'content', 'product' );
-				?>
+							<?php
+							$post_object = get_post( $upsell->get_id() );
 
-			<?php endforeach; ?>
+							setup_postdata( $GLOBALS['post'] =& $post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
 
-		<?php woocommerce_product_loop_end(); ?>
+							wc_get_template_part( 'content', 'product' );
+							?>
+
+						<?php endforeach; ?>
+
+					<?php woocommerce_product_loop_end(); ?>
+
+					<button class="slick-next slick-arrow" style=""><i class="fa fa-angle-right"></i></button>
+
+					<!--======= End of tab product slider  =======-->
+				</div>
+			</div>
 			
-		</div>
 	</div>
+</div>
+
+<!--=============================================
+    =         End of   up-sell product slider         =
+    =============================================-->
 
 <!-- 	</section> -->
 

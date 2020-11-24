@@ -415,14 +415,42 @@ get_header();
 												<i class="fa fa-star"></i>
 												<i class="fa fa-star"></i> -->
 											</div>
-											<p class="product-price">
+
+											<?php if ( $price_ordinary = $product->get_price() ) : ?>
+											<!-- <span class="price"> -->
+											<p class="price">
+												<?php if ( $price_sale = $product->get_sale_price() ) : ?>
+												<del>
+													<span class="woocommerce-Price-amount amount">
+														<bdi><?php echo $price_sale; ?>
+															<span class="woocommerce-Price-currencySymbol">₽</span>
+														</bdi>
+													</span>
+												</del>
+												<?php endif; ?>
+												<ins>
+													<span class="woocommerce-Price-amount amount">
+														<bdi><?php echo $price_ordinary; ?>
+															<span class="woocommerce-Price-currencySymbol">₽</span>
+														</bdi>
+													</span>
+												</ins> 
+												
+											</p>
+											<!-- </span> -->
+											<?php endif; ?>
+
+											<!-- <p class="price">
+										
+												<span class="price"></span>
+											
 												<span class="main-price discounted">
 													<?php echo $product->get_price();?>
 												</span>
 												<span class="discounted-price">
 												<?php echo $product->get_sale_price();?>
 												</span>
-											</p>
+											</p> -->
 
 											<div class="hover-icons">
 												<ul>
@@ -562,14 +590,38 @@ get_header();
 												<i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
 											</div> -->
-											<p class="product-price">
+											<!-- <p class="price">
 												<span class="main-price discounted">
 													<?php echo $new_product->get_price();?>
 												</span>
 												<span class="discounted-price">
 													<?php echo $new_product->get_sale_price();?>
 												</span>
+											</p> -->
+
+											<?php if ( $price_ordinary = $product->get_price() ) : ?>
+											<!-- <span class="price"> -->
+											<p class="price">
+												<?php if ( $price_sale = $product->get_sale_price() ) : ?>
+												<del>
+													<span class="woocommerce-Price-amount amount">
+														<bdi><?php echo $price_sale; ?>
+															<span class="woocommerce-Price-currencySymbol">₽</span>
+														</bdi>
+													</span>
+												</del>
+												<?php endif; ?>
+												<ins>
+													<span class="woocommerce-Price-amount amount">
+														<bdi><?php echo $price_ordinary; ?>
+															<span class="woocommerce-Price-currencySymbol">₽</span>
+														</bdi>
+													</span>
+												</ins> 
+												
 											</p>
+											<!-- </span> -->
+											<?php endif; ?>
 
 											<div class="hover-icons">
 												<ul>
@@ -659,14 +711,38 @@ get_header();
 												<i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
 											</div> -->
-											<p class="product-price">
+											<!-- <p class="price">
 												<span class="main-price discounted">
 													<?php echo $sale_product->get_price();?>
 												</span>
 												<span class="discounted-price">
 													<?php echo $sale_product->get_sale_price();?>
 												</span>
+											</p> -->
+
+											<?php if ( $price_ordinary = $product->get_price() ) : ?>
+											<!-- <span class="price"> -->
+											<p class="price">
+												<?php if ( $price_sale = $product->get_sale_price() ) : ?>
+												<del>
+													<span class="woocommerce-Price-amount amount">
+														<bdi><?php echo $price_sale; ?>
+															<span class="woocommerce-Price-currencySymbol">₽</span>
+														</bdi>
+													</span>
+												</del>
+												<?php endif; ?>
+												<ins>
+													<span class="woocommerce-Price-amount amount">
+														<bdi><?php echo $price_ordinary; ?>
+															<span class="woocommerce-Price-currencySymbol">₽</span>
+														</bdi>
+													</span>
+												</ins> 
+												
 											</p>
+											<!-- </span> -->
+											<?php endif; ?>
 
 											<div class="hover-icons">
 												<ul>
@@ -752,14 +828,38 @@ get_header();
 												<i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
 											</div> -->
-											<p class="product-price">
+											<!-- <p class="price">
 												<span class="main-price discounted">
 													<?php echo $discount_product->get_price();?>
 												</span>
 												<span class="discounted-price">
 													<?php echo $discount_product->get_sale_price();?>
 												</span>
+											</p> -->
+
+											<?php if ( $price_ordinary = $product->get_price() ) : ?>
+											<!-- <span class="price"> -->
+											<p class="price">
+												<?php if ( $price_sale = $product->get_sale_price() ) : ?>
+												<del>
+													<span class="woocommerce-Price-amount amount">
+														<bdi><?php echo $price_sale; ?>
+															<span class="woocommerce-Price-currencySymbol">₽</span>
+														</bdi>
+													</span>
+												</del>
+												<?php endif; ?>
+												<ins>
+													<span class="woocommerce-Price-amount amount">
+														<bdi><?php echo $price_ordinary; ?>
+															<span class="woocommerce-Price-currencySymbol">₽</span>
+														</bdi>
+													</span>
+												</ins> 
+												
 											</p>
+											<!-- </span> -->
+											<?php endif; ?>
 
 											<div class="hover-icons">
 												<ul>

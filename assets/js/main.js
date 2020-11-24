@@ -1093,4 +1093,45 @@
 
 
 
+
+		/*** product up-upsell products slider ***/
+
+		var upsellProductsSlider = $('.up-sell-products-slider .products');
+		upsellProductsSlider.slick({
+			prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+			nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+			arrows: true,
+			autoplay: true,
+			autoplaySpeed: 4000,
+			dots: false,
+			pauseOnFocus: false,
+			pauseOnHover: false,
+			infinite: true,
+			slidesToShow: 3
+		});
+
+
+
+
+		/*** product related products slider ***/
+
+		var relatedProductsSlider = $('.related-products-slider .products');
+		relatedProductsSlider.slick({
+			prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+			nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+			arrows: true,
+			autoplay: true,
+			autoplaySpeed: 4000,
+			dots: false,
+			pauseOnFocus: false,
+			pauseOnHover: false,
+			infinite: true,
+			slidesToShow: 3
+		});
+
+
+		
+
+
+
 })(jQuery);	
