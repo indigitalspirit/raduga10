@@ -29,34 +29,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						?>
 						
-						<div class="about-block footer-logo">
-							<div class="image">
-								<?php
-									the_custom_logo();
-								?>
+				
+						<?php if ( is_active_sidebar('footer-logo') ) : ?>
 						
-							</div>
-
-							<div class="about-text footer-about">
-								<p>
-								<?php 
-										
-										echo $about_shop_description;
-										
-									?>
+								<!--=======  widget-logo block  =======-->
 								
-								</p>
-							
-							</div>
-
-							<div class="social-links footer-socials">
-								<ul>
-									<li><a href="<?php echo $shop_whatsapp;?>" class="whatsapp"  data-tooltip="WhatsApp"><i class="fa fa-whatsapp"></i></a></li>
-									<li><a href="<?php echo $shop_vk;?>" class="vk"  data-tooltip="vk"><i class="fa fa-vk"></i></a></li>
-								
-								</ul>
-							</div>
-						</div>
+									<?php dynamic_sidebar('footer-logo'); ?>																
+								<!--=======  End of widget-logo block  =======-->
+						
+						<?php endif; ?>
 						
 						<!--=======  End of address block  =======-->
 					</div>

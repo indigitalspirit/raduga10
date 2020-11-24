@@ -45,7 +45,7 @@ get_header();
 	?>
 
 
-	<div class="page-section mb-50">
+	<div class="page-section delivery-and-price mb-50">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5 col-md-12 mb-sm-45  mb-md-45">
@@ -66,7 +66,7 @@ get_header();
 					</div>
 
 					<div class="row">
-						<div class="col-12 mb-50">
+						<div class="col-12">
 						<div class="contact-map">
 							<?php echo $delivery_sc1_map; ?>
 						</div>
@@ -144,7 +144,7 @@ get_header();
 	=           price section
 	=============================================-->
 	
-	<div class="price-section mb-50">
+	<div class="price-section delivery-and-price__bottom mb-50">
 		<div class="container">
 			<div class="row mb-30">
 				
@@ -152,7 +152,7 @@ get_header();
 				<div class="about-feature col-md-6 col-12 mb-sm-30">
 					<div class="row">
 
-					<div class="col-12 mb-30">
+					<div class="col-12 mb-20">
 						<h3>
 							<?php echo $delivery_sc2_title_left; ?>
 						</h3>
@@ -168,7 +168,7 @@ get_header();
 							<h4>
 								<?php echo $delivery_item['delivery_sc2_list_left_item_title']; ?>
 							</h4>
-							<div>
+							<div class="delivery-and-price__bottom-descr">
 								<?php echo $delivery_item['delivery_sc2_list_left_item_text']; ?>
 							</div>
 
@@ -191,7 +191,7 @@ get_header();
 								 <?php echo $delivery_sc2_title_right;?>
 								</h3>
 	
-								<div>
+								<div class="delivery-and-price__bottom-descr">
 
 								<?php echo $delivery_sc2_text_right;?>
 

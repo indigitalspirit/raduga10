@@ -56,7 +56,8 @@ get_header();
 	=            hero slider         =
 	=============================================-->
 	
-	<div class="hero-area mb-45">
+	
+	<div class="hero-area main-slider mb-45">
 		<!--=======  slider container  =======-->
 			
 		<div class="hero-block-container">
@@ -75,7 +76,7 @@ get_header();
 							<div class="row">
 								<div class="col-lg-12">
 									<div class="slider-content hero-block__title">
-										<h1>
+										<!-- <h1>
 											<?php echo $main_sc1_title; ?>
 										</h1>
 										<p class="slider-price hero-block__subtitle">
@@ -83,7 +84,24 @@ get_header();
 										</p>
 										<a href="shop-left-sidebar.html" class="slider-btn  hero-block__btn">
 											<?php echo $main_sc1_button; ?>
+										</a> -->
+
+
+										<p class="slider-price hero-block__subtitle">
+										<?php echo $main_sc1_title; ?> 
+										</p>
+										<h1>
+											<?php echo $main_sc1_subtitle; ?>
+										</h1>
+									
+										<a href="/shop" class="slider-btn  hero-block__btn">
+											<?php echo $main_sc1_button; ?>
 										</a>
+
+									
+								
+
+
 									</div>
 								</div>
 							</div>
@@ -297,62 +315,73 @@ get_header();
 											$attachment_ids = $product->get_gallery_image_ids();
 											//get_pr($attachment_ids);
 											
-											if ( $attachment_ids && has_post_thumbnail() ) {
-													
-												foreach( $attachment_ids as $attachment_id ) {
-													//echo $image_link = wp_get_attachment_url( $attachment_id );
-														//Get URL of Gallery Images - default wordpress image sizes
-													echo $Original_image_url = wp_get_attachment_url( $attachment_id );
-													echo $full_url = wp_get_attachment_image_src( $attachment_id, 'full' )[0];
-													echo $medium_url = wp_get_attachment_image_src( $attachment_id, 'medium' )[0];
-													echo $thumbnail_url = wp_get_attachment_image_src( $attachment_id, 'thumbnail' )[0];
-
-													//Get URL of Gallery Images - WooCommerce specific image sizes
-													echo $shop_thumbnail_image_url = wp_get_attachment_image_src( $attachment_id, 'shop_thumbnail' )[0];
-													echo $shop_catalog_image_url = wp_get_attachment_image_src( $attachment_id, 'shop_catalog' )[0];
-													echo $shop_single_image_url = wp_get_attachment_image_src( $attachment_id, 'shop_single' )[0];
-
-													//echo Image instead of URL
-													echo wp_get_attachment_image($attachment_id, 'full');
-													echo wp_get_attachment_image($attachment_id, 'medium');
-													echo wp_get_attachment_image($attachment_id, 'thumbnail');
-													echo wp_get_attachment_image($attachment_id, 'shop_thumbnail');
-													echo wp_get_attachment_image($attachment_id, 'shop_catalog');
-													echo wp_get_attachment_image($attachment_id, 'shop_single');
-
-												}
-											}
+										
 										
 									?>
 									<div class="fl-product">
 										<div class="image sale-product">
 											<a href="<?php echo $product->get_permalink(); ?>">
 												<?php
-													if ( $attachment_ids && has_post_thumbnail() ):
-															
-														foreach( $attachment_ids as $attachment_id ) {
+													//if ( $attachment_ids && has_post_thumbnail() ):
+// 											if ( has_post_thumbnail() ):
+											$fl_product_thumb = wp_get_attachment_image_url( get_post_thumbnail_id( $product->get_id() ), 'shop_single');
+ 											if ( $fl_product_thumb ):
+											
+											?>
+												
+												<img src="<?php echo $fl_product_thumb; ?>" class="img-fluid" alt="<?php echo $product->get_title();?>">
+												
+												<?php
+											
+												else:
+											
+											?>
+												<img src="http://raduga10.ru/wp-content/uploads/woocommerce-placeholder-300x300.png" alt="Ожидается изображения товара" class="<?php echo $product->get_title();?>">
+												
+											<?php
+												endif; 
+															//echo 'has thumb:' . 
+														//foreach( $attachment_ids as $attachment_id ) {
 															//echo $image_link = wp_get_attachment_url( $attachment_id );
 															 //Get URL of Gallery Images - default wordpress image sizes
-															echo $Original_image_url = wp_get_attachment_url( $attachment_id );
-															echo $full_url = wp_get_attachment_image_src( $attachment_id, 'full' )[0];
-															echo $medium_url = wp_get_attachment_image_src( $attachment_id, 'medium' )[0];
-															echo $thumbnail_url = wp_get_attachment_image_src( $attachment_id, 'thumbnail' )[0];
+															// echo $Original_image_url = wp_get_attachment_url( $attachment_id );
+															// echo $full_url = wp_get_attachment_image_src( $attachment_id, 'full' )[0];
+															// echo $medium_url = wp_get_attachment_image_src( $attachment_id, 'medium' )[0];
+															// echo $thumbnail_url = wp_get_attachment_image_src( $attachment_id, 'thumbnail' )[0];
 
 															//Get URL of Gallery Images - WooCommerce specific image sizes
-															echo $shop_thumbnail_image_url = wp_get_attachment_image_src( $attachment_id, 'shop_thumbnail' )[0];
-															echo $shop_catalog_image_url = wp_get_attachment_image_src( $attachment_id, 'shop_catalog' )[0];
-															echo $shop_single_image_url = wp_get_attachment_image_src( $attachment_id, 'shop_single' )[0];
+															// echo $shop_thumbnail_image_url = wp_get_attachment_image_src( $attachment_id, 'shop_thumbnail' )[0];
+															// echo $shop_catalog_image_url = wp_get_attachment_image_src( $attachment_id, 'shop_catalog' )[0];
+															// echo $shop_single_image_url = wp_get_attachment_image_src( $attachment_id, 'shop_single' )[0];
 
 															//echo Image instead of URL
-															echo wp_get_attachment_image($attachment_id, 'full');
-															echo wp_get_attachment_image($attachment_id, 'medium');
-															echo wp_get_attachment_image($attachment_id, 'thumbnail');
-															echo wp_get_attachment_image($attachment_id, 'shop_thumbnail');
-															echo wp_get_attachment_image($attachment_id, 'shop_catalog');
-															echo wp_get_attachment_image($attachment_id, 'shop_single');
+															// echo wp_get_attachment_image($attachment_id, 'full');
+															// echo wp_get_attachment_image($attachment_id, 'medium');
+															// echo wp_get_attachment_image($attachment_id, 'thumbnail');
+															// echo wp_get_attachment_image($attachment_id, 'shop_thumbnail');
+															// echo wp_get_attachment_image($attachment_id, 'shop_catalog');
+															// echo wp_get_attachment_image($attachment_id, 'shop_single');
 
-														}
-													endif; 
+														//}
+												
+												
+													//the_post_thumbnail_url('shop_thumbnail'); 
+													//echo '</div>';
+
+													
+													$attachment_ids = $product->get_gallery_image_ids();
+													//get_pr($attachment_ids);
+													//var_dump($attachment_ids); 
+
+													if ( !empty($attachment_ids) ) {
+														//echo  $attachment_ids[0] . '   !  ';
+												?>
+													
+													<img src="<?php echo wp_get_attachment_image_url( $attachment_ids[0], 'shop_catalog'); ?>" class="img-fluid second-img" alt="<?php echo $product->get_title() . '-2';?>">
+
+												<?php
+	
+													}
 												?>
 
 												<!-- <img src="assets/images/products/product01.jpg" class="img-fluid" alt="">
@@ -370,13 +399,22 @@ get_header();
 													<?php echo $product->get_title(); ?>
 												</a>
 											</h2>
-											<!-- <div class="rating">
-												<i class="fa fa-star active"></i>
+											<div class="rating">
+												<?php 
+
+													
+													$rating  = $product->get_average_rating();
+													$count   = $product->get_rating_count();
+
+													echo wc_get_rating_html( $rating, $count );
+												
+												?>
+												<!-- <i class="fa fa-star active"></i>
 												<i class="fa fa-star active"></i>
 												<i class="fa fa-star active"></i>
 												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-											</div> -->
+												<i class="fa fa-star"></i> -->
+											</div>
 											<p class="product-price">
 												<span class="main-price discounted">
 													<?php echo $product->get_price();?>
@@ -390,7 +428,7 @@ get_header();
 												<ul>
 													<li><a href="<?php echo $product->add_to_cart_url();?>"  data-tooltip="Добавить в корзину"><i class="icon ion-md-cart"></i></a></li>
 													<!-- <li><a href="#"  data-tooltip="Compare"><i class="icon ion-md-options"></i></a></li> -->
-													<li><a href="#"  data-toggle = "modal" data-target="#quick-view-modal-container" data-tooltip="Quick View" data-product-id="<?php echo $product->get_id();?>"><i class="icon ion-md-open"></i></a></li>
+													<li><a href="#" class="quick-view-modal-container" data-toggle="modal" data-target="#quick-view-modal-container" data-tooltip="Быстрый просмотр" data-product-id="<?php echo $product->get_id();?>"><i class="icon ion-md-open"></i></a></li>
 												</ul>
 											</div>
 										</div>
@@ -542,7 +580,7 @@ get_header();
 													</li>
 													<!-- <li><a href="#"  data-tooltip="Compare"><i class="icon ion-md-options"></i></a></li> -->
 													<li>
-														<a href="#"  data-toggle = "modal" data-target="#quick-view-modal-container" data-tooltip="Quick View" data-product-id="<?php echo $new_product->get_id();?>">
+														<a href="#" class="quick-view-modal-container" data-toggle="modal" data-target="#quick-view-modal-container" data-tooltip="Быстрый просмотр" data-product-id="<?php echo $new_product->get_id();?>">
 															<i class="icon ion-md-open"></i>
 														</a>
 													</li>
@@ -639,7 +677,7 @@ get_header();
 													</li>
 													<!-- <li><a href="#"  data-tooltip="Compare"><i class="icon ion-md-options"></i></a></li> -->
 													<li>
-														<a href="#"  data-toggle = "modal" data-target="#quick-view-modal-container" data-tooltip="Quick View" data-product-id="<?php echo $sale_product->get_id();?>">
+														<a href="#" class="quick-view-modal-container" data-toggle="modal" data-target="#quick-view-modal-container" data-tooltip="Быстрый просмотр" data-product-id="<?php echo $sale_product->get_id();?>">
 															<i class="icon ion-md-open"></i>
 														</a>
 													</li>
@@ -732,7 +770,7 @@ get_header();
 													</li>
 													<!-- <li><a href="#"  data-tooltip="Compare"><i class="icon ion-md-options"></i></a></li> -->
 													<li>
-														<a href="#"  data-toggle = "modal" data-target="#quick-view-modal-container" data-tooltip="Quick View" data-product-id="<?php echo $discount_product->get_id();?>">
+														<a href="#" class="quick-view-modal-container" data-toggle="modal" data-target="#quick-view-modal-container" data-tooltip="Быстрый просмотр" data-product-id="<?php echo $discount_product->get_id();?>">
 															<i class="icon ion-md-open"></i>
 														</a>
 													</li>

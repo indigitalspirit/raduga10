@@ -22,6 +22,19 @@ function raduga10_widgets_init() {
 			'after_title'   => '</h3>',
 		)
 	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Боковое меню на страницах блога', 'raduga10' ),
+			'id'            => 'sidebar-blog',
+			'description'   => esc_html__( 'Add widgets here.', 'raduga10' ),
+			'before_widget' => '<div class="single-sidebar">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="sidebar-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+	
 	
 	register_sidebar( array(
 		'name'          => esc_html__( 'Сайдбар магазина', 'raduga10' ),
@@ -35,6 +48,16 @@ function raduga10_widgets_init() {
 
 
 	register_sidebar( array(
+		'name'          => 'Подвал блок с логотипом',
+		'id'            => 'footer-logo',
+		'before_widget' => '<div class="about-block footer-logo">',
+		'after_widget'  => '</div>',
+		//'before_title'  => '<h4 class="footer-widget-title mt-sm-20 mb-sm-10">',
+		//'after_title'   => '</h4>',
+	) );
+
+
+	register_sidebar( array(
 		'name'          => 'Подвал блок левый',
 		'id'            => 'footer-1',
 		'before_widget' => '<div class="widget-block">',
@@ -42,6 +65,9 @@ function raduga10_widgets_init() {
 		'before_title'  => '<h4 class="footer-widget-title mt-sm-20 mb-sm-10">',
 		'after_title'   => '</h4>',
 	) );
+
+	
+
 	register_sidebar( array(
 		'name'          => 'Подвал блок центр',
 		'id'            => 'footer-2',

@@ -14,7 +14,7 @@
 <div class="slider-banner home-one-banner banner-bg banner-bg-1 mb-30">
 	<div class="banner-text">
 			<h1>
-			<?php esc_html_e( 'Nothing Found', 'raduga10' ); ?>
+			<?php esc_html_e( 'Ничего не найдено', 'raduga10' ); ?>
 			</h1>
 			<!-- <p class="big-text">Lamps Light Color</p>
 			<p>Only from $209</p> -->
@@ -29,7 +29,9 @@
 	<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'raduga10' ); ?></p>
+					<p>Извините, по вашему запросу записей не найдено. Попробуйте воспользоваться поиском</p>
+					
+					<p>Попробуйте воспользоваться поиском</p>
 					<?php
 						get_search_form();
 					?>

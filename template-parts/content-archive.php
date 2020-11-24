@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying results in search pages
+ * Template part for displaying posts
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -9,7 +9,6 @@
 
 ?>
 
-<div class="col-md-12">
 <!--=======  single blog post  =======-->
 <div class="single-blog-post mb-35">
 	<div class="row">
@@ -77,8 +76,6 @@
 	</div>
 </div>
 <!--=======  End of single blog post-<?php the_ID(); ?>  =======-->
-		
-</div>	
 
 
 

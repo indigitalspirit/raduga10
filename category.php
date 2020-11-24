@@ -1,6 +1,6 @@
 <?php
 /**
- * Страница архива
+ * Страница категории
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *

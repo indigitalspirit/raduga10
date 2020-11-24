@@ -40,10 +40,10 @@ get_header();
     =            SALES page content         =
     =============================================-->
     
-    <div class="shop-page-content mb-50">
+    <div class="shop-page-content sales mb-40">
 			<div class="container">
 
-					<div class="row row-10 mb-50">
+					<div class="row row-10">
 
 					<?php 
 						$sale_counter = 0;
@@ -51,21 +51,43 @@ get_header();
 							$sale_counter = $sale_counter + 1;
 						
 					?>
-				
+
+
+					<?php if( ($sale_banner['sales_sc1_banner_link'] != '') ||
+										($sale_banner['sales_sc1_banner_img'] != '') ||
+										($sale_banner['sales_sc1_banner_title'] != '') ||
+										($sale_banner['sales_sc1_banner_text'] != '') ): ?>
 						<!-- Banner -->
-						<div class="col-12 mb-sm-30">
+						<div class="col-12 mb-10">
 							<div class="single-banner">
 							
 								<?php if( $sale_banner['sales_sc1_banner_link'] != '' ): ?>
-									<a href="<?php echo $sale_banner['sales_sc1_banner_link']; ?>">
+									<a class="single-banner__img" href="<?php echo $sale_banner['sales_sc1_banner_link']; ?>">
+																			
+										<?php if( $sale_banner['sales_sc1_banner_img'] != '' ): ?>
+											<img src="<?php echo $sale_banner['sales_sc1_banner_img']; ?>" alt="Акция <?php echo $sale_counter;?>">
+										<?php endif; ?>
+
+										
+
+									</a>
 								<?php endif; ?>
-								
-								<?php if( $sale_banner['sales_sc1_banner_img'] != '' ): ?>
-									<img src="<?php echo $sale_banner['sales_sc1_banner_img']; ?>" alt="Акция <?php echo $sale_counter;?>">
-								<?php endif; ?>
-								</a>
+
+								<div class="single-banner__descr">
+									<?php if( $sale_banner['sales_sc1_banner_title'] != '' ): ?>
+										<h2><?php echo $sale_banner['sales_sc1_banner_title']; ?></h2>
+									<?php endif; ?>
+
+									<?php if( $sale_banner['sales_sc1_banner_text'] != '' ): ?>
+										<p><?php echo $sale_banner['sales_sc1_banner_text']; ?></p>
+									<?php endif; ?>
+								</div>
+
+							
+
 							</div>
 						</div>
+					<?php endif; ?>
 
 					<?php } ?>
 						
@@ -79,15 +101,15 @@ get_header();
 
 
 	<div class="border-section mb-50">
-		<div class="container">
+		<!-- <div class="container">
 			<div class="row justify-content-center">
-				<div class="col-12">
+				<div class="col-12"> -->
 					<div class="border-container">
 
 					</div>
-				</div>
+				<!-- </div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 
 
@@ -96,10 +118,10 @@ get_header();
 	=           lead form 
 	=============================================-->
 	
-	<div class="lead-contacts mb-50">
+	<div class="lead-contacts mb-70">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-12 col-md-8">
+				<div class="col-12 col-lg-8">
 					<!--=======  contact form content  =======-->
 					
 					<div class="contact-form-content">

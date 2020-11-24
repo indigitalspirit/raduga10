@@ -4,20 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<!--=============================================
-	=            search overlay         =
-	=============================================-->
-	
-	<div class="search-overlay" id="search-overlay">
-		<a href="#" class="search-overlay-close" id="search-overlay-close"><i class="fa fa-times"></i></a>
-		<div class="search-box">
-			<?php get_search_form(); ?>
-			<!-- <input type="search" placeholder="Search entire store here">
-			<button><i class="icon ion-md-search"></i></button> -->
-		</div>
-	</div>
-		
-	<!--=====  End of search overlay  ======-->
+
 
 
 
@@ -38,6 +25,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<div class="col-lg-5 col-md-6 col-xs-12 mb-xxs-25 mb-xs-25 mb-sm-25">
 							<div class="product-image-slider fl-product-image-slider fl3-product-image-slider quickview-product-image-slider">
 								<?php
+								
+								
 								// $attachment_id = get_post_thumbnail_id( $product->get_id() );
 								// $product_thumb = wp_get_attachment_image_url( $attachment_id, 'shop_single');
 								?>

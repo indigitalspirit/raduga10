@@ -206,7 +206,8 @@ function raduga10_add_info_fields_to_admin_page(){
 		'raduga10_header_info_third',
 		'raduga10_header_icon_first',
 		'raduga10_header_icon_second',
-		'raduga10_header_icon_third'
+		'raduga10_header_icon_third',
+		'raduga10_checkout_field'
 	);
 
 	for($i = 0; $i < count($options_names); $i++ ) {
@@ -266,6 +267,10 @@ function raduga10_add_info_fields_to_admin_page(){
 				case 'raduga10_header_icon_third':
 					$this_option_name = "Иконка в хедере 3";
 					break;
+					
+				case 'raduga10_checkout_field':
+					$this_option_name = "Сообщение на странице оформления заказа";
+					break;
 			}
 
 			add_settings_field( 
@@ -308,3 +313,62 @@ function raduga10_extra_fields_callback( $val ){
 	}
 }
 add_action('admin_menu', 'raduga10_add_info_fields_to_admin_page');
+
+
+
+/******* REMOVE COUPONS ********/
+//remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+//
+// 
+
+/*** CHANGE PAYMENT TYPE TEXT (CHECKOUT PAGE) ***/
+// add_filter( 'woocommerce_no_available_payment_methods_message', 'raduga10_change_payment_message', 10, 2);
+// function raduga10_change_payment_message( $esc_html__ ) {
+//     //$message = WC()->customer->get_billing_country()?'You do not have sufficent funds to process this order, please<a
+//   //href="/my-account">top up</a> or upgrade. Thank you':'Please fill in your details above to see available payment methods.';
+// 	$esc_html__ = '<p>' . get_option('raduga10_checkout_field') . '</p>';
+//     return $esc_html__;
+// }
+
+
+/****** disable on-line payment *****/
+add_filter('woocommerce_cart_needs_payment', 'raduga10_disabled_payment');
+function raduga10_disabled_payment () {
+return false;
+}
+
+
+add_filter( 'woocommerce_checkout_fields', 'raduga10_override_checkout_fields' );
+function raduga10_override_checkout_fields( $fields ) {
+	
+	unset( $fields['billing']['billing_company'] );
+// 	unset( $fields["billing"]["billing_first_name"] );
+// 	unset( $fields['billing']['billing_last_name'] );
+// 	unset( $fields["billing"]["billing_address_1"] );
+	unset( $fields['billing']['billing_address_2'] );
+// 	unset( $fields["billing"]["billing_city"] );
+// 	unset( $fields['billing']['billing_postcode'] );
+// 	
+	unset( $fields["billing"]["billing_country"] );
+	
+	unset( $fields['billing']['billing_state'] );
+	
+// 	unset( $fields['order']['order_comments'] );
+
+// 	
+	unset( $fields['shipping']['shipping_first_name'] );
+	unset( $fields['shipping']['shipping_last_name'] );
+	unset( $fields['shipping']['shipping_company'] );
+	unset( $fields['shipping']['shipping_address_1'] );
+	unset( $fields['shipping']['shipping_address_2'] );
+	unset( $fields['shipping']['shipping_city'] );
+	unset( $fields['shipping']['shipping_postcode'] );
+	unset( $fields['shipping']['shipping_country'] );
+	unset( $fields['shipping']['shipping_state'] );
+// 	
+ 	
+    return $fields;
+	
+}
+
+

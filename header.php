@@ -40,7 +40,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-lg-9">
-						<div class="header-top-text header-top-text__left text-center text-lg-left mb-0 mb-md-15 mb-sm-15">
+						<div class="header-top-text header-top-text__left header-top-text__phone text-center text-lg-left mb-0 mb-md-15 mb-sm-15">
 								<p>
 									<!-- <i class="icon ion-md-alarm"></i>  -->
 									<i class="fa fa-phone"></i> 
@@ -54,7 +54,7 @@
 								</p>
 						</div>
 
-						<div class="header-top-text header-top-text__left text-center text-lg-left mb-0 mb-md-15 mb-sm-15">
+						<div class="header-top-text header-top-text__left header-top-text__shedule text-center text-lg-left mb-0 mb-md-15 mb-sm-15">
 							<p>
 								<i class="icon ion-md-alarm"></i> 
 								<!-- <i class="fa fa-phone"></i>  -->
@@ -67,7 +67,7 @@
 							</p>
 						</div>
 
-						<div class="header-top-text header-top-text__left text-center text-lg-left mb-0 mb-md-15 mb-sm-15">
+						<div class="header-top-text header-top-text__left header-top-text__address text-center text-lg-left mb-0 mb-md-15 mb-sm-15">
 							<p>
 								<!-- <i class="icon ion-md-alarm"></i>  -->
 								<i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -83,8 +83,8 @@
 					</div>
 
 					<div class="col-12 col-lg-3">
-						<div class="header-top-dropdown d-flex justify-content-center justify-content-lg-end">
-							<div class="header-top-text header-top-text__left text-center text-lg-right mb-0 mb-md-15 mb-sm-15">
+						<div class="header-top-dropdown d-flex justify-content-center justify-content-lg-end header-top-text__account-socials">
+							<div class="header-top-text header-top-text__left header-top-text__account  text-center text-lg-right mb-0 mb-md-15 mb-sm-15">
 								<div class="single-dropdown">
 									<a href="/my-account/" id="changeAccount">
 										<span id="accountMenuName">
@@ -102,7 +102,7 @@
 									</div> -->
 								</div>
 							</div>
-							<div class="header-top-text text-center text-lg-right mb-0 mb-md-15 mb-sm-15">
+							<div class="header-top-text text-center header-top-text__socials text-lg-right mb-0 mb-md-15 mb-sm-15">
 								<p class="header-socials">
 								<?php 
 											$shop_whatsapp = get_option( 'raduga10_whatsapp_field');
@@ -262,7 +262,8 @@
 										'theme_location' => 'menu-categories',
 										'menu'        => '',
 										'container' => false,
-										'walker' => new Raduga_Walker_Nav_Menu(),
+										'walker'          => '',
+// 										'walker' => new Raduga_Walker_Nav_Menu(),
 										
 
 
@@ -305,9 +306,10 @@
 						<!--=======  search icon for tablet  =======-->
                                 
 						<div class="search-icon-menutop-tablet text-right d-inline-block d-lg-none">
-							<a href="#" id="search-overlay-active-button">
+							<a href="#" id="search-overlay-active-button" class="mobile-search">
 								<i class="icon ion-md-search"></i>
 							</a>
+							<?php get_search_form(); ?>
 						</div>
 						
 						<!--=======  End of search icon for tablet  =======-->
@@ -323,6 +325,8 @@
 										'theme_location' => 'menu-main',
 										'menu'        => '',
 										'container' => false,
+										'walker'          => '',
+// 										'walker' => new Raduga_Walker_Nav_Menu(),
 									)
 								);
 								?>
@@ -349,6 +353,8 @@
 										'menu'        => '',
 										'container'       => 'nav', 
 										'container_class' => 'mean-nav', 
+										'walker'          => '',
+// 										'walker' => new Raduga_Walker_Nav_Menu(),
 										//'container_id'    => '',
 										//'menu_class'      => 'menu', 
 										//'menu_id'         => '',

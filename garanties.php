@@ -127,7 +127,7 @@ get_header();
 	</div>
 
 
-	<div class="page-section mb-50">
+	<div class="page-section mb-70">
 		<div class="container">
 			<div class="row">
 				
@@ -136,7 +136,7 @@ get_header();
 					
 
 					<div class="row justify-content-center">
-						<div class="col-12 col-md-8">
+						<div class="col-12 col-lg-8">
 							<!--=======  contact form content  =======-->
 							
 							<div class="contact-form-content contact-form__contacts">

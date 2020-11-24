@@ -41,36 +41,39 @@ get_header();
 	=============================================-->
 
 
-	<div class="page-section mb-50">
+	<div class="page-section sertificates mb-50">
 		<div class="container">
 			<div class="row row-30">
 
-				<!-- About Content -->
-				<div class="about-content col-lg-6">
-					<div class="row">
-						<div class="col-12 mb-20">
+				<!-- Sertificates Content -->
+				<div class="col-12">
+					<div class="sertificates-content">
+						<div class="sertificates-content__descr">
 							<?php echo $sertificates_sc1_text; ?>
 						</div>
 
-					<?php foreach( $sertificates_sc1_left_block as $sertificates_block ) { ?>
-						<div class="col-12 mb-20">
-							<h4>
-							<?php echo $sertificates_block['sertificates_sc1_left_block_item_title']; ?>
-							</h4>
-							<p>
-							<?php echo $sertificates_block['sertificates_sc1_left_block_item_text']; ?>
-							</p>
-						</div>
-					<?php } ?>
+							<?php foreach( $sertificates_sc1_left_block as $sertificates_block ) { ?>
+								<div class="sertificates-content__descr">
+									<h4>
+										<?php echo $sertificates_block['sertificates_sc1_left_block_item_title']; ?>
+									</h4>
+									<p>
+										<?php echo $sertificates_block['sertificates_sc1_left_block_item_text']; ?>
+									</p>
+								</div>
+							<?php } ?>
 					
-
+						
+					</div>
+					<div class="sertificates-image">
+						<img src="<?php echo $sertificates_sc1_img;?>" alt="">
 					</div>
 				</div>
 				
-				<!-- About Image -->
-				<div class="about-image col-lg-6 mb-50">
+				<!-- sertificates Image -->
+				<!-- <div class="about-image col-lg-6 mb-50">
 					<img src="<?php echo $sertificates_sc1_img;?>" alt="">
-				</div>
+				</div> -->
 				
 				
 				
@@ -84,15 +87,15 @@ get_header();
 
 
 	<div class="border-section mb-50">
-		<div class="container">
+		<!-- <div class="container">
 			<div class="row justify-content-center">
-				<div class="col-12">
+				<div class="col-12"> -->
 					<div class="border-container">
 
 					</div>
-				</div>
+				<!-- </div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 
 
@@ -100,17 +103,17 @@ get_header();
 	=           lead form 
 	=============================================-->
 	
-	<div class="lead-contacts mb-50">
+	<div class="lead-contacts mb-70">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-12 col-md-8">
+				<div class="col-12 col-lg-8">
 					<!--=======  contact form content  =======-->
 					
-					<div class="contact-form-content">
+					<div class="contact-form-content contact-form-content__center">
 						<h2 class="contact-page-title">
 						<?php echo $sertificates_sc2_title_form;?>
 						 </h2>
-						<p>
+						<p class="contact-page-subtitle">
 						<?php echo $sertificates_sc2_subtitle_form;?>
 						</p>
 

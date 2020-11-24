@@ -243,28 +243,40 @@ function estore_loop_product_div_image_close(){
 	//echo '<div>';
 
 	//$main_thumbnail = 
+	//
+	$fl_product_thumb = wp_get_attachment_image_url( get_post_thumbnail_id( $product->get_id() ), 'shop_single');
+ 	if ( $fl_product_thumb ):
+											
 
 ?>
-
+	
 	<img src="<?php the_post_thumbnail_url('shop_thumbnail'); ?>" class="img-fluid" alt="<?php echo $product->get_title();?>">
 
 <?
+	else:
+?>
+	<img src="http://raduga10.ru/wp-content/uploads/woocommerce-placeholder-300x300.png" alt="Ожидается изображения товара" class="<?php echo $product->get_title();?>">
+												
+<?php
+	endif; 
 	//the_post_thumbnail_url('shop_thumbnail'); 
 	//echo '</div>';
 
 	
 	$attachment_ids = $product->get_gallery_image_ids();
+	//get_pr($attachment_ids);
+	//var_dump($attachment_ids); 
 
-	if ( $attachment_ids[0] != '' ) {
+	if ( !empty($attachment_ids) ) {
+		//echo  $attachment_ids[0] . '   !  ';
 ?>
 
 	<img src="<?php echo wp_get_attachment_image_url( $attachment_ids[0], 'shop_catalog'); ?>" class="img-fluid second-img" alt="<?php echo $product->get_title() . '-2';?>">
 
 <?php
 
-		
 	}
-	
+		
 	
 }
 

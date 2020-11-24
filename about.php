@@ -44,7 +44,7 @@ get_header();
 	?>
 
 
-	<div class="page-section mb-50">
+	<div class="page-section about-page mb-50">
 		<div class="container">
 			<div class="row row-30">
 
@@ -57,10 +57,10 @@ get_header();
 				<div class="about-content col-lg-6">
 					<div class="row">
 						<div class="col-12 mb-20">
-							<h2>
+							<h1>
 							<?php echo $about_sc1_title; ?>
-							</h2>
-							<div>
+							</h1>
+							<div class="about-content__descr">
 							<?php echo $about_sc1_text; ?>
 							</div>
 						</div>
@@ -69,100 +69,96 @@ get_header();
 				
 			</div>
 
+	
 			<div class="row">
 				<div class="col-12 col-md-6">
-					<div class="row">
-						<div class="col-12">
-							<h2 class="contact-page-title">
-							<?php echo $about_sc2_title_socials; ?>
-							</h2>
+					<h2 class="contact-page-title">
+					<?php echo $about_sc2_title_socials; ?>
+					</h2>
 
-							<?php 
-								// $shop_whatsapp = get_option( 'raduga10_whatsapp_field');
-								// $shop_vk = get_option( 'raduga10_vk_field');
-							?>
+					<?php 
+						// $shop_whatsapp = get_option( 'raduga10_whatsapp_field');
+						// $shop_vk = get_option( 'raduga10_vk_field');
+					?>
 
-						<?php 
-							if( $about_sc2_links_socials['about_sc2_links_socials_1']['about_sc2_links_socials_link']  != '' ): 
-						?>
-						<div>
-							<?php 
-							 	foreach($about_sc2_links_socials as $links_socials) {
-							?>
+				<?php 
+					if( $about_sc2_links_socials['about_sc2_links_socials_1']['about_sc2_links_socials_link']  != '' ): 
+				?>
+				<div class="about-content__descr">
+					<?php 
+						foreach($about_sc2_links_socials as $links_socials) {
+					?>
 
-							<div>
-								<?php echo $links_socials['about_sc2_links_socials_icon']; ?>
-								<a href="<?php echo $links_socials['about_sc2_links_socials_link']; ?>" target="_blank">
-									<?php echo $links_socials['about_sc2_links_socials_link']; ?>
-								</a>
-							</div>
-
-							<?php
-								 }
-							?>
-						</div>
-						<?php endif;?>
-
-						</div>
-						<div class="col-12" >
-							<h2 class="contact-page-title">
-								<?php echo $about_sc2_title_other; ?>
-							</h2>
-
-							<?php 
-								if( $about_sc2_links['about_sc2_link_1'] != '' ): 
-							?>
-								<div>
-									<?php 
-										foreach( $about_sc2_links as $about_link) {
-									?>
-										<a href="<?php echo $about_link; ?>">
-											<?php echo $about_link; ?>
-										</a>
-									<?php
-										}
-									?>
-								</div>
-							<?php endif;?>		
-						</div>
+				<?php if($links_socials['about_sc2_links_socials_link'] != ''): ?>
+					<div>
+						<?php echo $links_socials['about_sc2_links_socials_icon']; ?>
+						<a href="<?php echo $links_socials['about_sc2_links_socials_link']; ?>" target="_blank">
+							<?php echo $links_socials['about_sc2_links_socials_link']; ?>
+						</a>
 					</div>
+				<?php endif; ?>
+					<?php
+							}
+					?>
 				</div>
+				<?php endif;?>
 
-				<div class="col-12 col-md-6">
+				</div>
+				<div class="col-12 col-md-6" >
+					<h2 class="contact-page-title">
+						<?php echo $about_sc2_title_other; ?>
+					</h2>
+
+					<?php 
+						if( $about_sc2_links['about_sc2_link_1'] != '' ): 
+					?>
+						<div class="about-content__descr">
+							<?php 
+								foreach( $about_sc2_links as $about_link) {
+							?>
+								<a href="<?php echo $about_link; ?>">
+									<?php echo $about_link; ?>
+								</a>
+							<?php
+								}
+							?>
+						</div>
+					<?php endif;?>		
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="border-section mb-50 mt-50">
+		<!-- <div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12"> -->
+					<div class="border-container">
+
+					</div>
+				<!-- </div>
+			</div>
+		</div> -->
+	</div>
+
+			
+	<div class="page-section about-page mb-70">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12 col-lg-8">
+
 					<!--=======  contact form content  =======-->
-					<div class="contact-form-content">
+					<div class="contact-form-content contact-form__about">
 						<h2 class="contact-page-title">
 							<?php echo $about_sc2_title_form; ?>
 						</h2>
-						<p>
+						<p class="contact-page-subtitle">
 							<?php echo $about_sc2_subtitle_form; ?>
 						</p>
 
 						<div class="contact-form">
-							<!-- <form id="contact-form" action="assets/php/mail.php" method="post">
-								<div class="form-group">
-									<label>Ваше имя: <span class="required">*</span></label>
-									<input type="text" name="customerName" id="customername" required="">
-								</div>
-								<div class="form-group">
-									<label>Ваш email: <span class="required">*</span></label>
-									<input type="email" name="customerEmail" id="customerEmail" required="">
-								</div>
-								<div class="form-group">
-									<label>Ваш телефон:</label>
-									<input type="phone" name="contactPhone" id="contactPhone">
-								</div>
-								<div class="form-group">
-									<label>Сообщение:</label>
-									<textarea name="contactMessage" id="contactMessage"></textarea>
-								</div>
-								<div class="form-group mb-0">
-									<button type="submit" value="submit" id="submit" class="fl-btn" name="submit">Отправить</button>
-									<span class="contact-form__caption">
-										Нажимая на кнопку "Отправить", вы соглашаетесь с <a href="#">"Политикой конфиденциальности"</a>
-									</span>
-								</div>
-							</form> -->
+							
 							<?php echo do_shortcode('[contact-form-7 id="182" title="Заявка на главной"]'); ?>
 						</div>
 						<!-- <p class="form-messege pt-10 pb-10 mt-10 mb-10"></p> -->

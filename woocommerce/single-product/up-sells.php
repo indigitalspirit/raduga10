@@ -21,13 +21,33 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( $upsells ) : ?>
 
-	<section class="up-sells upsells products">
+<!--=============================================
+    =            related product slider         =
+    =============================================-->
+    
+    <div class="related-product-slider-area mb-50">
+        <div class="container">
+            
+						
+
+<!-- 	<section class="up-sells upsells products"> -->
 		<?php
 		$heading = apply_filters( 'woocommerce_product_upsells_products_heading', __( 'You may also like&hellip;', 'woocommerce' ) );
 
 		if ( $heading ) :
 			?>
-			<h2><?php echo esc_html( $heading ); ?></h2>
+			<div class="row">
+                <div class="col-lg-12">
+					<!--=======  section title  =======-->
+						
+					<div class="section-title">
+						<h2><?php echo esc_html( $heading ); ?></h2>
+					</div>
+					
+					<!--=======  End of section title  =======-->
+				</div>
+            </div>
+			
 		<?php endif; ?>
 
 		<?php woocommerce_product_loop_start(); ?>
@@ -45,8 +65,11 @@ if ( $upsells ) : ?>
 			<?php endforeach; ?>
 
 		<?php woocommerce_product_loop_end(); ?>
+			
+		</div>
+	</div>
 
-	</section>
+<!-- 	</section> -->
 
 	<?php
 endif;

@@ -26,8 +26,9 @@ function raduga10_footer_end() {
 
 add_action( 'raduga10_footer_parts', 'raduga10_quick_view_modal_callback', 45 );
 function raduga10_quick_view_modal_callback() {
-	if( is_shop() || is_product() || is_product_category() || is_home() ) {
+	// if( is_shop() || is_product() || is_product_category() || is_home() ) {
 		get_template_part( 'template-parts/footer/quick-view-modal' );
-	}
+		get_template_part( 'template-parts/footer/search-overlay-modal' );
+	//}
 	
 }
