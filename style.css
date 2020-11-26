@@ -165,6 +165,17 @@ form#searchform button {
     
 }
 
+form#searchform .search-result.active {
+    background: #ffffff;
+    padding: 10px;
+}
+
+form#searchform .search-result a {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
 .contact-form-content__center {
 
 }
@@ -1485,9 +1496,93 @@ padding: 20px 0;
 }
 
 
+.single-product-content-area .product .entry-summary .variations_form {
+    border-top: 1px solid #ddd;
+    padding-top: 30px;
+}
+
+.single-product-content-area .product .entry-summary table.variations 
+{
+    font-weight: normal;
+    /* border-top: 1px solid #ddd;
+    padding-top: 30px; */
+
+}
+
+.single-product-content-area .product .entry-summary table.variations td
+{
+    /* padding-top: 20px; */
+
+}
+
+.single-product-content-area .product .entry-summary table.variations td.label
+{
+    padding-right: 10px;
+    font-weight: 500;
+    
+    font-family: "Rubik", sans-serif;
+    color: #7a7a7a;
+
+}
+
+.single-product-content-area .product .entry-summary table.variations td.value select {
+
+
+    border: 1px solid #ddd;
+    height: 40px;
+    padding: 10px 15px;
+    color: #7a7a7a;
+    /* vertical-align: top; */
+    /* display: inline-block; */
+    margin-bottom: 5px;
+}
+
+
+.single-product-content-area .product .entry-summary table.variations td.value .reset_variations {
+    border-radius: 30px;
+    background-color: #9acf6a;
+    line-height: 12px;
+    
+    padding: 10px 15px;
+    font-weight: 500;
+    font-size: 12px;
+    color: #ffffff;
+    border: none;
+    margin-left: 10px;
+
+}
+
+.single-product-content-area .product .entry-summary .woocommerce-variation {
+
+    /* border-bottom: 1px solid #ddd; */
+    padding: 20px 0px 0px 0px;
+    
+}
+
+.single-product-content-area .product .entry-summary .woocommerce-variation-add-to-cart {
+    padding-top: 15px;
+    /* border-top: 1px solid #ddd; */
+}
+
+
+
+
+
+
+
+
 
 .single-product-content-area .product .woocommerce-tabs {
     margin-top: 20px;
+}
+
+
+.single-product-content-area .woocommerce-tabs  #nav-tabContent .product-description {
+
+}
+
+.single-product-content-area .woocommerce-tabs  #nav-tabContent .product-description .woocommerce-product-attributes-item__label {
+    padding-right: 20px;
 }
 
 
@@ -1633,6 +1728,12 @@ padding: 20px 0;
 }
 
 
+.single-product-content-area .woocommerce-tabs.product-description-review-area .product-description-review-container .tab-content #product-reviews #comments .woocommerce-noreviews {
+    color: #ffffff;
+    padding-left: 20px;
+}
+
+
 
 
 .up-sell-products-slider, .related-products-slider {
@@ -1696,6 +1797,11 @@ padding: 20px 0;
 .related-products-slider .section-title {
     border-bottom: 1px solid #ebebeb;
 }
+
+
+
+
+
 
 
 

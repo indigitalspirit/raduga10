@@ -62,9 +62,17 @@ function raduga10_scripts() {
 // 		)
 // 	);  
 
+wp_enqueue_script('ajax-search' , get_template_directory_uri() . '/assets/js/ajax-search.js', array('jquery'), null, true);
+	wp_localize_script('ajax-search', 'searchform' , array(
+		'url' => admin_url( 'admin-ajax.php' ),
+		'nonce' => wp_create_nonce('search-nonce')
+	));
+
 
 
 	// wp_enqueue_script( 'raduga10-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array('jquery'), null, true );
+
+
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

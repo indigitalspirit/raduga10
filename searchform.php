@@ -8,4 +8,5 @@
 	<input type="text" value="<?php echo get_search_query() ?>" name="s" id="s"  placeholder="Поиск ..." />
   <!-- <input type="submit" id="searchsubmit" value="найти" /> -->
   <button type="submit" id="searchsubmit"><i class="icon ion-md-search"></i></button>
+  <div class="search-result"></div>
 </form>

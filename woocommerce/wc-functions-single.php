@@ -69,11 +69,16 @@ add_action( 'woocommerce_before_single_product', 'estore_wrapper_product_start',
 
   add_filter( 'woocommerce_short_description', 'raduga10_short_description', 10 );
   function raduga10_short_description($content){
-  ?>
-    <div class="product-description mb-20">
+		if($content) {
+
+		
+	?>
+	
+    <div class="product-description MYD mb-20">
       <?php echo $content;?>
     </div>
-  <?php
+	<?php
+	}
   }
 
 
