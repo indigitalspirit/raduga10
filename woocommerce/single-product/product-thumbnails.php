@@ -24,6 +24,7 @@ if ( ! function_exists( 'wc_get_gallery_image_html' ) ) {
 
 global $product;
 
+//echo 'THUMBNAILS';
 $attachment_ids = $product->get_gallery_image_ids();
 
 if ( $attachment_ids && $product->get_image_id() ) {

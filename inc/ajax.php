@@ -68,8 +68,13 @@ function estore_quick_view_product_callback(){
 	
 	$product_thumb = wp_get_attachment_image_url( $data['attachment_id'], 'shop_single');
 	
+
+	$gallery_images = array();
+
+
 	if($product_thumb) {
 		$data['product_thumb'] = $product_thumb;
+		$gallery_images[] = $product_thumb;
 	}
 	else {
 		$data['product_thumb'] = 'https://raduga10.ru/wp-content/uploads/woocommerce-placeholder-300x300.png';
@@ -91,6 +96,30 @@ function estore_quick_view_product_callback(){
 		
 	}
 	
+	
+
+	$gallery_ids = $product->get_gallery_image_ids();
+
+	//if ( $gallery_ids && $product->get_image_id() ) {
+	if ( !empty($gallery_ids) ) {
+		
+
+		foreach ( $gallery_ids as $gallery_id ) {
+
+			$gallery_images[] = wp_get_attachment_image_url( $gallery_id, 'full');
+			//$gallery_id;
+			// echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', wc_get_gallery_image_html( $gallery_id ), $gallery_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
+		}
+		
+	}
+
+	if( sizeof($gallery_images ) > 1 ) {
+		$data['gallery_images'] = $gallery_images;
+	}
+	else {
+		$data['gallery_images'] = '';
+	}
+
 	
 
 	$data['regular_price'] = $product->get_regular_price();

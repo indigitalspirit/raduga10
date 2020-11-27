@@ -1130,8 +1130,17 @@
 		});
 
 
+
+
+		/*** PRODUCT PAGE PRODUCT 
+		 * CHANGE SLIDER ZOOM-TRIGGER ICON
+		*/
+
+		//$('.woocommerce-product-gallery__trigger').html('');
+
+		//$('.woocommerce-product-gallery__trigger img').attr("src", "/wp-content/themes/raduga10/assets/images/icons/zoom-in.svg");
 		
 
-
+		
 
 })(jQuery);	

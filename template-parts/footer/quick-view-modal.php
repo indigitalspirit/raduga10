@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div>
 				<div class="modal-body">
 					<div class="row">
-						<div class="col-lg-5 col-md-6 col-xs-12 mb-xxs-25 mb-xs-25 mb-sm-25">
+						<div class="col-lg-5 col-md-6 col-xs-12 mb-xxs-25 mb-xs-25 mb-sm-25 product-image-slider__wrapper">
 							<div class="product-image-slider fl-product-image-slider fl3-product-image-slider quickview-product-image-slider">
 								<?php
 								
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								// $attachment_id = get_post_thumbnail_id( $product->get_id() );
 								// $product_thumb = wp_get_attachment_image_url( $attachment_id, 'shop_single');
 								?>
-								<img src="<?php //echo $product_thumb; ?>" alt=" " class="img-responsive" />
+								<!-- <img src="<?php //echo $product_thumb; ?>" alt=" " class="img-responsive" /> -->
 							</div>
 							<!-- end of single product tabstyle one image gallery -->
 						</div>

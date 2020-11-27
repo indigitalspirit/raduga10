@@ -22,9 +22,74 @@ jQuery(document).ready(function ($) {
 			console.log(out);
 	}
 
+	console.log('galery: ');
+	//objDump(data.product_images);
+
 	function insertProductData(productObject) {
-		$("#quick-view-modal-container .modal-body img.img-responsive").attr("src", productObject.product_thumb);
-		$("#quick-view-modal-container .modal-body img.img-responsive").attr("alt", productObject.product_name);
+		if(productObject.gallery_images) {
+			console.log('NEED SLIDER');
+
+			$('#quick-view-modal-container .modal-body .product-image-slider__wrapper').append('<div class="product-image-slider__nav"></div>');
+
+			// $('#quick-view-modal-container .modal-body .product-image-slider__wrapper').append('<button type="button" class="slick-prev slider-arrow_left"><i class="fa fa-chevron-left"></i></button>');
+			// $('#quick-view-modal-container .modal-body .product-image-slider__wrapper').append('<button type="button" class="slick-next slider-arrow_right"><i class="fa fa-chevron-right"></i></button>');
+
+			for (var i in productObject.gallery_images) {
+				$('#quick-view-modal-container .modal-body .product-image-slider').append('<div class="product-image-slider__item"><img src="'+productObject.gallery_images[i]+'" alt="'+i+'" class="img-responsive" /></div>');
+
+				$('#quick-view-modal-container .modal-body .product-image-slider__nav').append('<div class="product-image-slider__nav-item"><img src="'+productObject.gallery_images[i]+'" alt="'+i+'" class="img-responsive" /></div>');
+
+				//productObject.gallery_images[i];
+			}
+
+			//product-image-slider
+
+			/*** quick view products gallery slider ***/
+			var galleryProductsSlider = $('#quick-view-modal-container .product-image-slider');
+
+			var galleryProductsSliderNav = $('#quick-view-modal-container .product-image-slider__nav');
+
+			galleryProductsSlider.slick({
+				//prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+				//nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+				// arrows: true,
+				// autoplay: true,
+				// autoplaySpeed: 4000,
+				// dots: false,
+				// pauseOnFocus: false,
+				// pauseOnHover: false,
+				// infinite: true,
+				// slidesToShow: 3
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				arrows: false,
+				fade: true,
+				asNavFor: '.product-image-slider__nav'
+			});
+
+	
+			galleryProductsSliderNav.slick({
+				slidesToShow: 3,
+				slidesToScroll: 1,
+				asNavFor: '.product-image-slider',
+				//dots: true,
+				//centerMode: true,
+				arrows: true,
+				prevArrow: '<button type="button" class="slick-prev slider-arrow_left"><i class="fa fa-chevron-left"></i></button>',
+				nextArrow: '<button type="button" class="slick-next slider-arrow_right"><i class="fa fa-chevron-right"></i></button>',
+				focusOnSelect: true
+			});
+	
+
+		}
+
+		else {
+			$('#quick-view-modal-container .modal-body .product-image-slider').append('<img src="'+productObject.product_thumb+'" alt="'+productObject.product_name+'" class="img-responsive" />');
+			
+		}
+
+		// $("#quick-view-modal-container .modal-body img.img-responsive").attr("src", productObject.product_thumb);
+		// $("#quick-view-modal-container .modal-body img.img-responsive").attr("alt", productObject.product_name);
 
 		$('#quick-view-modal-container .modal-body h2.product-title').html(productObject.product_name);
 
@@ -58,8 +123,10 @@ jQuery(document).ready(function ($) {
 	}
 
 	function cleanProductData() {
-		$("#quick-view-modal-container .modal-body img.img-responsive").attr("src", 'https://raduga10.ru/wp-content/uploads/woocommerce-placeholder-300x300.png');
-		$("#quick-view-modal-container .modal-body img.img-responsive").attr("alt", '');
+		// $("#quick-view-modal-container .modal-body img.img-responsive").attr("src", 'https://raduga10.ru/wp-content/uploads/woocommerce-placeholder-300x300.png');
+		// $("#quick-view-modal-container .modal-body img.img-responsive").attr("alt", '');
+
+		$("#quick-view-modal-container .modal-body .product-image-slider").html('');
 
 		$('#quick-view-modal-container .modal-body h2.product-title').html('');
 
