@@ -48,12 +48,12 @@ function raduga10_widgets_init() {
 
 
 	register_sidebar( array(
-		'name'          => 'Подвал блок с логотипом',
+		'name'          => 'Подвал блок с лого',
 		'id'            => 'footer-logo',
 		'before_widget' => '<div class="about-block footer-logo">',
 		'after_widget'  => '</div>',
-		//'before_title'  => '<h4 class="footer-widget-title mt-sm-20 mb-sm-10">',
-		//'after_title'   => '</h4>',
+		'before_title'  => '',
+		'after_title'   => '',
 	) );
 
 

@@ -81,6 +81,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class="modal-footer">
 					
 				</div>
+				
+				<!-- ====== Preloader ======  -->
+				<div class="loading">
+					<div class="load-circle"></div>
+				</div>
+				<!-- ======End Preloader ======  -->
+
 			</div>
 
 		</div>

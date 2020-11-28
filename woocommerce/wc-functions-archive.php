@@ -250,7 +250,9 @@ function estore_loop_product_div_image_close(){
 
 ?>
 	
-	<img src="<?php the_post_thumbnail_url('shop_thumbnail'); ?>" class="img-fluid" alt="<?php echo $product->get_title();?>">
+	<!-- <img src="<?php the_post_thumbnail_url('shop_thumbnail'); ?>" class="img-fluid" alt="<?php echo $product->get_title();?>"> -->
+
+	<img src="<?php echo $fl_product_thumb; ?>" class="img-fluid" alt="<?php echo $product->get_title();?>">
 
 <?
 	else:

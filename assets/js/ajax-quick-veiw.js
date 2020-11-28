@@ -161,6 +161,8 @@ jQuery(document).ready(function ($) {
 					dataType: 'json',
 					beforeSend:function(xhr){
 						 $('#quick-view-modal-container .modal-body').css('opacity', '.1');
+						 $('#quick-view-modal-container .modal-content .loading').addClass('active');
+
 
 						 cleanProductData();
 
@@ -175,8 +177,9 @@ jQuery(document).ready(function ($) {
 
 						$(document.body).trigger('wc_fragment_refresh');
 						
-
+						$('#quick-view-modal-container .modal-content .loading').removeClass('active');
 						$('#quick-view-modal-container .modal-body').css('opacity', '1');
+						
 
 					
 						//$('#quick-view-modal-container .modal-body').html(data.product);
